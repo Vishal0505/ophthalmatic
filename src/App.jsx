@@ -1,6 +1,16 @@
+import './App.css'
+import Footer from './components/footer'
+import Header from './components/header'
+import HomePage from './pages/home/page'
+function App() {
 
-export default function App() {
   return (
-    <div>App</div>
+    <>
+      <Header />
+      <HomePage />
+      <Footer />
+    </>
   )
 }
+
+export default App
