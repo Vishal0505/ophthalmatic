@@ -7,6 +7,10 @@ import ProductPage from './pages/products/page'
 
 export const routeConfig = [
   {
+    path:'/',
+    element: <App/> 
+  },
+  {
     path:'/home',
     element: <HomePage/> 
   },
@@ -19,7 +23,6 @@ export const routeConfig = [
     element: <ContactPage/> 
   },
   {
-    path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
    
