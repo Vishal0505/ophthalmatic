@@ -1,5 +1,9 @@
+import { Box } from "@radix-ui/themes";
+
 export default function HomePage() {
   return (
-    <div>page</div>
+    <Box height='100vh'>
+      <h3>Home Page</h3>
+    </Box>
   )
 }
