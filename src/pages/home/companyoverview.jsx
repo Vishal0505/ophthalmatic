@@ -1,4 +1,4 @@
-import { Box, Heading, Section, Text } from "@radix-ui/themes";
+import { Box, Button, Heading, Section, Text } from "@radix-ui/themes";
 
 export default function CompanyOverview() {
     return (
@@ -21,9 +21,9 @@ export default function CompanyOverview() {
                     </Text>
 
                     <Box className="flex justify-center mt-8 text-center">
-                        <a href="#learn-more" aria-label="Explore our vision" className="bg-blue-600 text-white py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 transform hover:-translate-y-1">
+                        <Button color="blue-700" variant="solid" radius="full" size='4'>
                             Explore Our Vision
-                        </a>
+                        </Button>
                     </Box>
                 </Box>
 
@@ -116,7 +116,9 @@ export default function CompanyOverview() {
                 <Box className="absolute inset-0 bg-gradient-to-br from-indigo-400 to-pink-400 opacity-60 transform rotate-6"></Box>
 
                 <Box className="relative z-10 max-w-4xl mx-auto p-10 rounded-lg shadow-2xl bg-white text-justify">
-                    <Heading as="h2" className="text-5xl font-extrabold mb-8 text-gray-800">Our Vision & Impact</Heading>
+                    <Heading as="h2" className=" text-6xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-800 to-purple-800">
+                        Our Vision & Impact
+                    </Heading>
                     <Text className="text-lg text-gray-700 leading-relaxed mb-4">
                         At Gadhiya Group, our vision is to revolutionize healthcare by leveraging cutting-edge technology and innovative solutions. We aim to empower healthcare providers with the tools they need to deliver the highest quality of care.
                     </Text>
@@ -128,9 +130,9 @@ export default function CompanyOverview() {
                     </Text>
 
                     <Box className="flex justify-center mt-8">
-                        <a href="#learn-more" aria-label="Discover our journey" className="bg-gradient-to-r from-green-400 to-blue-500 text-white py-3 px-6 rounded-full shadow-lg hover:bg-gradient-to-l transition duration-300 transform hover:-translate-y-1">
+                        <Button color="blue-700" variant="solid" radius="full" size='4'>
                             Discover Our Journey
-                        </a>
+                        </Button>
                     </Box>
                 </Box>
                 <Box className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-pink-400 to-transparent rounded-full transform translate-x-1/2 -translate-y-1/2"></Box>
