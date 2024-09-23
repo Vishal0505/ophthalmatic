@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <>
-      <Box className='sticky top-0'>
+      <Box className='sticky top-0 z-50'>
         <header className="w-full bg-white shadow-md ">
           <Flex align="center" justify="between" className="container mx-auto p-4">
             <Box className="text-2xl font-bold">

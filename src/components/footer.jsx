@@ -67,10 +67,10 @@ export default function Footer() {
                       Product 1
                     </NavLink>
                     <NavLink to="/product2" className='text-gray-400 hover:underline'>
-                      Product 2cec
+                      Product2
                     </NavLink>
                     <NavLink to="/product3" className='text-gray-400 hover:underline'>
-                      Product 3cecccececec
+                      Product 3
                     </NavLink>
                     <NavLink to="/product4" className='text-gray-400 hover:underline'>
                       Product 4
