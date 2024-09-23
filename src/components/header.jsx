@@ -1,87 +1,136 @@
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
+import { Box, Flex } from '@radix-ui/themes';
 import { Menu, SquareMenu } from 'lucide-react';
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import logo from "../assets/logo/logo.png"
 
 export default function Header() {
-
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
 
   return (
     <>
-      <header className="w-full bg-white shadow-md">
-        <div className="container mx-auto p-4 flex items-center justify-between">
-          {/* Logo */}
-          <div className="text-2xl font-bold">
-            <a href="/">Logo</a>
-          </div>
+      <Box className='sticky top-0 z-50'>
+        <header className="w-full bg-white shadow-md ">
+          <Flex align="center" justify="between" className="container mx-auto p-4">
+            <Box className="text-2xl font-bold">
+              <NavLink to="/home" activeClassName="text-gray-500">
+                <img src={logo} alt="Logo" className="h-auto w-20" />
+              </NavLink>
+            </Box>
+            <nav className="hidden md:flex space-x-6">
+              <NavigationMenu.Root>
+                <NavigationMenu.List className="flex space-x-4">
+                  <NavigationMenu.Item>
+                    <NavLink
+                      to="/home"
+                      className={({ isActive }) =>
+                        isActive
+                          ? 'text-lg font-medium text-gray-500 underline'
+                          : 'text-lg font-medium hover:text-gray-500'
+                      }
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-6">
-            <NavigationMenu.Root>
-              <NavigationMenu.List className="flex space-x-4">
-                <NavigationMenu.Item>
-                  <a href="/" className="text-lg font-medium hover:text-gray-500">
-                    Home
-                  </a>
-                </NavigationMenu.Item>
-                <NavigationMenu.Item>
-                  <a href="/about" className="text-lg font-medium hover:text-gray-500">
-                    About
-                  </a>
-                </NavigationMenu.Item>
-                <NavigationMenu.Item>
-                  <a href="/products" className="text-lg font-medium hover:text-gray-500">
-                    Products
-                  </a>
-                </NavigationMenu.Item>
-                <NavigationMenu.Item>
-                  <a href="/contact" className="text-lg font-medium hover:text-gray-500">
-                    Contact
-                  </a>
-                </NavigationMenu.Item>
-              </NavigationMenu.List>
-            </NavigationMenu.Root>
-          </nav>
+                    >
+                      Home
+                    </NavLink>
+                  </NavigationMenu.Item>
+                  <NavigationMenu.Item>
+                    <NavLink
+                      to="/product"
+                      className={({ isActive }) =>
+                        isActive
+                          ? 'text-lg font-medium text-gray-500 underline'
+                          : 'text-lg font-medium hover:text-gray-500'
+                      }
 
-          {/* Mobile Hamburger Menu Button */}
-          <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-2xl focus:outline-none">
-              {isOpen ? <SquareMenu /> : <Menu />} {/* Toggle between menu and close icons */}
-            </button>
-          </div>
-        </div>
+                    >
+                      About
+                    </NavLink>
+                  </NavigationMenu.Item>
+                  <NavigationMenu.Item>
+                    <NavLink to="/product"
+                      className={({ isActive }) => isActive
+                        ? 'text-lg font-medium text-gray-500 underline'
+                        : 'text-lg font-medium hover:text-gray-500'
+                      }
 
-        {/* Mobile Navigation Menu */}
-        {isOpen && (
-          <nav className="md:hidden bg-white shadow-lg">
-            <NavigationMenu.Root>
-              <NavigationMenu.List className="flex flex-col space-y-4 p-4">
-                <NavigationMenu.Item>
-                  <a href="/" className="text-lg font-medium hover:text-gray-500">
-                    Home
-                  </a>
-                </NavigationMenu.Item>
-                <NavigationMenu.Item>
-                  <a href="/about" className="text-lg font-medium hover:text-gray-500">
-                    About
-                  </a>
-                </NavigationMenu.Item>
-                <NavigationMenu.Item>
-                  <a href="/products" className="text-lg font-medium hover:text-gray-500">
-                    Products
-                  </a>
-                </NavigationMenu.Item>
-                <NavigationMenu.Item>
-                  <a href="/contact" className="text-lg font-medium hover:text-gray-500">
-                    Contact
-                  </a>
-                </NavigationMenu.Item>
-              </NavigationMenu.List>
-            </NavigationMenu.Root>
-          </nav>
-        )}
-      </header>
+                    >
+                      Products
+                    </NavLink>
+                  </NavigationMenu.Item>
+                  <NavigationMenu.Item>
+                    <NavLink
+                      to="/contact"
+                      className={({ isActive }) =>
+                        isActive
+                          ? 'text-lg font-medium text-gray-500 underline'
+                          : 'text-lg font-medium hover:text-gray-500'
+                      }
+
+                    >
+                      Contact
+                    </NavLink>
+                  </NavigationMenu.Item>
+                </NavigationMenu.List>
+              </NavigationMenu.Root>
+            </nav>
+            <div className="md:hidden">
+              <button onClick={() => setIsOpen(!isOpen)} className="text-2xl focus:outline-none">
+                {isOpen ? <SquareMenu /> : <Menu />}
+              </button>
+            </div>
+          </Flex>
+
+          {isOpen && (
+            <Box className="md:hidden bg-white shadow-lg">
+              <NavigationMenu.Root>
+                <NavigationMenu.List className="flex flex-col space-y-4 p-4">
+                  <NavigationMenu.Item>
+                    <NavLink
+                      to="/home"
+                      className="text-lg font-medium hover:text-gray-500"
+                      onClick={handleLinkClick}
+                    >
+                      Home
+                    </NavLink>
+                  </NavigationMenu.Item>
+                  <NavigationMenu.Item>
+                    <NavLink
+                      to="/product"
+                      className="text-lg font-medium hover:text-gray-500"
+                      onClick={handleLinkClick}
+                    >
+                      About
+                    </NavLink>
+                  </NavigationMenu.Item>
+                  <NavigationMenu.Item>
+                    <NavLink
+                      to="/product"
+                      className="text-lg font-medium hover:text-gray-500"
+                      onClick={handleLinkClick}
+                    >
+                      Products
+                    </NavLink>
+                  </NavigationMenu.Item>
+                  <NavigationMenu.Item>
+                    <NavLink
+                      to="/contact"
+                      className="text-lg font-medium hover:text-gray-500"
+                      onClick={handleLinkClick}
+                    >
+                      Contact
+                    </NavLink>
+                  </NavigationMenu.Item>
+                </NavigationMenu.List>
+              </NavigationMenu.Root>
+            </Box>
+          )}
+        </header>
+      </Box>
     </>
-  )
+  );
 }
