@@ -9,10 +9,9 @@ export default function Footer() {
       <Box className="container mx-auto px-4">
         <Flex direction="column" align="center">
           <Flex mb='8' wrap className="w-full flex-col md:flex-row gap-4 md:gap-9">
-            <Box mb={{ base: '0', md: '4' }} className="w-full md:w-2/4 text-justify">
+            <Flex direction='column' gap='4'  mb={{ base: '0', md: '4' }} className="w-full md:w-2/4 text-justify">
               <Flex gap='3'>
-                <img src={logo} alt="Logo" className="h-auto w-20" />
-                <h2 className="text-2xl md:text-3xl font-bold mb-2">Ophthalmatic</h2>
+                <img src={logo} alt="Logo" className="h-auto w-52" />
               </Flex>
               <Text className="text-justify text-gray-400 text-sm md:text-base">
                 Ophthalmatic is a leading medical equipment manufacturing company known for its quality,
@@ -23,7 +22,7 @@ export default function Footer() {
                 At Ophthalmatic, we are dedicated to continuous innovation, ensuring that our products meet
                 and exceed the highest global standards, while prioritizing patient safety, comfort, and clinical outcomes.
               </Text>
-            </Box>
+            </Flex>
             <Flex justify='between' className='w-full md:w-2/4 flex-wrap'>
               <Box className="w-full md:w-1/4 mb-4">
                 <h4 className="text-lg md:text-xl font-semibold mb-2">About Us</h4>

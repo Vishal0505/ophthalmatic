@@ -8,10 +8,10 @@ import ProductPage from './pages/products/page';
 export const routeConfig = [
   {
     path: '/',
-    element: <Layout />,   
+    element: <Layout />,
     children: [
       {
-        path: 'home',
+        index: true, 
         element: <HomePage />,
       },
       {
@@ -23,6 +23,6 @@ export const routeConfig = [
         element: <ContactPage />,
       },
     ],
-    errorElement: <ErrorPage />,  
+    errorElement: <ErrorPage />,
   },
 ];

@@ -18,8 +18,8 @@ export default function Header() {
         <header className="w-full bg-white shadow-md ">
           <Flex align="center" justify="between" className="container mx-auto p-4">
             <Box className="text-2xl font-bold">
-              <NavLink to="/home" activeClassName="text-gray-500">
-                <img src={logo} alt="Logo" className="h-auto w-20" />
+              <NavLink to="/" activeClassName="text-gray-500">
+                <img src={logo} alt="Logo" className="h-auto w-52" />
               </NavLink>
             </Box>
             <nav className="hidden md:flex space-x-6">
@@ -27,7 +27,7 @@ export default function Header() {
                 <NavigationMenu.List className="flex space-x-4">
                   <NavigationMenu.Item>
                     <NavLink
-                      to="/home"
+                      to="/"
                       className={({ isActive }) =>
                         isActive
                           ? 'text-lg font-medium text-gray-500 underline'
@@ -91,7 +91,7 @@ export default function Header() {
                 <NavigationMenu.List className="flex flex-col space-y-4 p-4">
                   <NavigationMenu.Item>
                     <NavLink
-                      to="/home"
+                      to="/"
                       className="text-lg font-medium hover:text-gray-500"
                       onClick={handleLinkClick}
                     >
