@@ -3,6 +3,8 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { User } from 'lucide-react';
 import founder_1 from "../../assets/founders/founder_1.jpg"
+import bgimg from "../../assets/bg/bgimg.jpg";
+import BackgroundImage from "../../components/ui/background-image";
 
 export default function Founders() {
   const founders = [
@@ -16,7 +18,7 @@ export default function Founders() {
       name: "Rohitbhai Gadhiya",
       title: "Managing Trustee - Gadhiya Group",
       description: `Rohitbhai Gadhiya, a distinguished Trustee of Gadhiya Group, is a driving force behind the impactful initiatives of Gadhiya Foundation. His commitment to community service is exemplified through the foundation’s efforts to enhance well-being and social welfare.`,
-     photo: "https://via.placeholder.com/100",
+      photo: "https://via.placeholder.com/100",
     },
     {
       name: "Vivek Hisoriya",
@@ -34,13 +36,7 @@ export default function Founders() {
 
   const items = founders.map((founder, index) => (
     <Box key={index}
-      className="relative bg-white p-6 rounded-lg border border-gray-300 shadow-md flex flex-col justify-between h-96 mx-4"
-      style={{
-        backgroundImage: "url('/path-to-texture.png')",
-        backgroundSize: 'cover',
-        backgroundBlendMode: 'multiply',
-      }}
-    >
+      className="relative bg-white p-6 rounded-lg border border-gray-300 shadow-md flex flex-col justify-between h-96 mx-4">
       <Box className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-t-lg"></Box>
       <Box className="flex justify-center items-center mb-4">
         {founder.photo ? (
@@ -64,14 +60,8 @@ export default function Founders() {
   ));
 
   return (
-    <div className="relative py-12">
-      <div
-        className="absolute inset-0 bg-gradient-to-b from-indigo-200 via-purple-200 to-indigo-300 opacity-75"
-        style={{
-          backgroundImage: 'url(https://www.transparenttextures.com/patterns/cubes.png)',
-          backgroundSize: '400px 400px',
-        }}
-      />
+    <Box className="relative  bg-gradient-to-b from-blue-300 via-purple-300 to-indigo-300 inset-0">
+      <BackgroundImage imageUrl={bgimg} opacity={0.7} />
       <Section className="relative max-w-4xl mx-auto px-4 z-10">
         <Heading
           as="h2"
@@ -90,7 +80,8 @@ export default function Founders() {
           disableButtonsControls={true}
         />
       </Section>
-    </div>
+      <Box className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-l from-pink-300 to-transparent rounded-full transform -translate-x-1/2 translate-y-1/2"></Box>
+    </Box>
 
   );
 }
