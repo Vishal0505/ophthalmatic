@@ -1,16 +1,18 @@
 import { Box } from "@radix-ui/themes";
-import Herosection from "./herosection";
 import CompanyOverview from "./companyoverview";
 import Founders from "./founders";
+import Herosection from "./herosection";
 import OurHorizon from "./our-horizon";
+import OurValue from "./our-value";
 
 export default function HomePage() {
   return (
-    <Box className="bg-gray-50" >
+    <Box  >
       <Herosection />
       <CompanyOverview />
       <Founders />
       <OurHorizon />
+      <OurValue />
     </Box>
   )
 }
