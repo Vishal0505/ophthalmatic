@@ -40,7 +40,7 @@ export default function Header() {
                   </NavigationMenu.Item>
                   <NavigationMenu.Item>
                     <NavLink
-                      to="/product"
+                      to="/about-us"
                       className={({ isActive }) =>
                         isActive
                           ? 'text-lg font-medium text-gray-500 underline'

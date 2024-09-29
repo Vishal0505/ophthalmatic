@@ -9,9 +9,11 @@ export default function Footer() {
       <Box className="container mx-auto px-4">
         <Flex direction="column" align="center">
           <Flex mb='8' wrap className="w-full flex-col md:flex-row gap-4 md:gap-9">
-            <Flex direction='column' gap='4'  mb={{ base: '0', md: '4' }} className="w-full md:w-2/4 text-justify">
+            <Flex direction='column' gap='4' mb={{ base: '0', md: '4' }} className="w-full md:w-2/4 text-justify">
               <Flex gap='3'>
-                <img src={logo} alt="Logo" className="h-auto w-52" />
+                <NavLink to="/" activeClassName="text-gray-500">
+                  <img src={logo} alt="Logo" className="h-auto w-52" />
+                </NavLink>
               </Flex>
               <Text className="text-justify text-gray-400 text-sm md:text-base">
                 Ophthalmatic is a leading medical equipment manufacturing company known for its quality,
@@ -36,7 +38,7 @@ export default function Footer() {
                   <NavLink to="/corporate-house" className='text-gray-400 hover:underline'>
                     Our Corporate House
                   </NavLink>
-                  <NavLink to="/warehouse" className='text-gray-400 hover:underline'>
+                  <NavLink to="/ware-house" className='text-gray-400 hover:underline'>
                     Our Warehouse
                   </NavLink>
                 </Flex>
@@ -44,7 +46,7 @@ export default function Footer() {
               <Box className="w-full text-nowrap md:w-1/4  mb-4">
                 <h4 className="text-lg md:text-xl font-semibold mb-2">Our Activities</h4>
                 <Flex direction='column' gap='2'>
-                  <NavLink to="/csr" className='text-gray-400 hover:underline'>
+                  <NavLink to="/csr-activity" className='text-gray-400 hover:underline'>
                     CSR
                   </NavLink>
                   <NavLink to="/export-activity" className='text-gray-400 hover:underline'>
