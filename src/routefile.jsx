@@ -7,6 +7,7 @@ import ErrorPage from './pages/error';
 import ExportActivity from './pages/export-activity/page';
 import CompanyOverview from './pages/home/companyoverview';
 import Founders from './pages/home/founders';
+import Certificates from './pages/home/certificates';
 import HomePage from './pages/home/page';
 import InternationalConference from './pages/international-conference/page';
 import OurCorporateHouse from './pages/our-corporate-house/page';
@@ -61,6 +62,10 @@ export const routeConfig = [
       {
         path: 'international-conference',
         element: <InternationalConference />,
+      },
+      {
+        path: 'certificates',
+        element: <Certificates />,
       },
     ],
     errorElement: <ErrorPage />,

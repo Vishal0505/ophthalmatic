@@ -4,6 +4,7 @@ import Founders from "./founders";
 import Herosection from "./herosection";
 import OurHorizon from "./our-horizon";
 import OurValue from "./our-value";
+import Certificates from "./certificates";
 
 export default function HomePage() {
   return (
@@ -13,6 +14,7 @@ export default function HomePage() {
       <Founders />
       <OurHorizon />
       <OurValue />
+      <Certificates/>
     </Box>
   )
 }
