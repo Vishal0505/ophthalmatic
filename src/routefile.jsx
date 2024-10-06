@@ -7,7 +7,7 @@ import ErrorPage from './pages/error';
 import ExportActivity from './pages/export-activity/page';
 import CompanyOverview from './pages/home/companyoverview';
 import Founders from './pages/home/founders';
-import Certificates from './pages/home/certificates';
+import Certificates from './pages/certificates/page';
 import HomePage from './pages/home/page';
 import InternationalConference from './pages/international-conference/page';
 import OurCorporateHouse from './pages/our-corporate-house/page';
@@ -64,7 +64,7 @@ export const routeConfig = [
         element: <InternationalConference />,
       },
       {
-        path: 'certificates',
+        path: 'certificate',
         element: <Certificates />,
       },
     ],
