@@ -39,7 +39,7 @@ export default function OurValue() {
                 <Flex justify="center" align="center">
                   <img src={service.icon} alt={service.name} className="h-20 object-contain" />
                 </Flex>
-                <p className="mt-2 font-medium">{service.name}</p>
+                {/* <p className="mt-2 font-medium">{service.name}</p> */}
               </Flex>
             ))}
           </Flex>
