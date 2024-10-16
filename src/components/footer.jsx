@@ -7,10 +7,11 @@ export default function Footer() {
   return (
     <>
       <Flex direction='column' className='bg-sky-50 text-black'>
+
         <footer className="w-full  py-12">
           <Flex gap='3' className="container mx-auto px-4" direction="column" width="100%">
             <Flex className="flex-col md:flex-row items-start gap-8 xl:gap-9">
-              {/* Logo and Address */}
+
               <Flex direction='column' gap='3' className="text-lg w-full md:w-5/12">
                 <Flex>
                   <NavLink to="/" activeClassName="text-black">
@@ -29,20 +30,24 @@ export default function Footer() {
                       <Phone size='25' />
                       <Flex direction='column' className='leading-1'>
                         <Text className="text-sm">For More Inquiry</Text>
-                        <Text className="text-sm">+91 931-608-1913</Text>
+                        <a href='tel:+918140259610' className=' text-black text-sm'>
+                          +91 8140259610
+                        </a>
                       </Flex>
                     </Flex>
                     <Flex gap='3' align='center'>
                       <Mail size='25' />
                       <Flex direction='column' className='leading-1'>
                         <Text className="text-sm">To Send Mail</Text>
-                        <Text className="text-sm">export@gadhiyagroup.com</Text>
+                        <a href='mailto:export@gadhiyagroup.com' className='text-sm text-black'>
+                          export@gadhiyagroup.com
+                        </a>
                       </Flex>
                     </Flex>
                   </Flex>
                 </Flex>
               </Flex>
-              {/* Quick Links */}
+
               <Flex className="w-full md:w-4/12 flex-col">
                 <Text as="h4" className="text-lg font-bold mb-4">Quick Links</Text>
                 <Flex gap='9'>
@@ -60,7 +65,7 @@ export default function Footer() {
                   </Flex>
                 </Flex>
               </Flex>
-              {/* Our Products */}
+
               <Flex direction='column' className="w-full md:w-3/12">
                 <Text as="h4" className="text-lg font-bold mb-4">Our Products</Text>
                 <Flex direction='column' gap='4'>
@@ -86,6 +91,7 @@ export default function Footer() {
                   </Flex>
                 </Flex>
               </Flex>
+
             </Flex>
           </Flex>
         </footer>
