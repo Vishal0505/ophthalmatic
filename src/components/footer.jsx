@@ -6,9 +6,8 @@ import logo from "../assets/logo/logo.png";
 export default function Footer() {
   return (
     <>
-      <Flex direction='column' className='bg-sky-50 text-black'>
-
-        <footer className="w-full  py-12">
+      <Flex direction='column' className='bg-sky-50 text-black be-red-500 z-40'>
+        <footer className="w-full  py-12 z-50 bg-sky-50">
           <Flex gap='3' className="container mx-auto px-4" direction="column" width="100%">
             <Flex className="flex-col md:flex-row items-start gap-8 xl:gap-9">
 
@@ -48,7 +47,7 @@ export default function Footer() {
                 </Flex>
               </Flex>
 
-              <Flex className="w-full md:w-4/12 flex-col">
+              <Flex className="w-full md:w-4/12 flex-col z-50">
                 <Text as="h4" className="text-lg font-bold mb-4">Quick Links</Text>
                 <Flex gap='9'>
                   <Flex direction='column' className='text-nowrap' gap='4'>
@@ -66,7 +65,7 @@ export default function Footer() {
                 </Flex>
               </Flex>
 
-              <Flex direction='column' className="w-full md:w-3/12">
+              <Flex direction='column' className="w-full md:w-3/12 ">
                 <Text as="h4" className="text-lg font-bold mb-4">Our Products</Text>
                 <Flex direction='column' gap='4'>
                   <NavLink to="/csr-activity" className='text-black hover:underline'>Ceramics & Bathware</NavLink>
@@ -95,10 +94,10 @@ export default function Footer() {
             </Flex>
           </Flex>
         </footer>
-        <Flex className='w-full'>
-          <Separator orientation="horizontal" className="w-full bg-black h-[1px]" />
+        <Flex className='w-full z-50'>
+          <Separator orientation="horizontal" className="w-full bg-black h-[1px] z-50" />
         </Flex>
-        <Flex justify='center' className="text-black text-sm py-6">
+        <Flex justify='center' className="text-black bg-sky-50 text-sm py-6 z-50">
           © 2023, All Rights Reserved
         </Flex>
       </Flex>
