@@ -21,6 +21,11 @@ export default {
       animation: {
         slide: 'slide 30s linear infinite',
       },
+      colors: {
+        'sky-blue': '#EFF8FF',
+        'primary-blue' : '#284694',
+        'light-blue': '#527282'
+      },
     },
   },
   plugins: [],
