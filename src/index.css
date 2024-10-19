@@ -4,6 +4,9 @@
     --background-color: #f3f4f6;
     --text-color-black: #000000;
     --text-color-white: #FFFFFF;
+    --text-color-light-blue: #527282;
+    --footer-bg: #0D1B2A;
+    --bg-sky-blue: #EFF8FF
 }
 
 @tailwind base;

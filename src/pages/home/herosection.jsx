@@ -1,19 +1,26 @@
-import { Box, Flex, Text } from "@radix-ui/themes";
-import bgimg from "../../assets/bg/bgimg.jpg";
-import BackgroundImage from "../../components/ui/background-image";
+import { Box, Button, Flex, Text } from "@radix-ui/themes";
+import hero_bg from "../../assets/herosection/hero_bg.jpg";
+import Container from "../../components/ui/container";
+import Phone from "../../components/icons/phone";
 
 export default function Herosection() {
   return (
-
-    <Box className="relative bg-gradient-to-b from-blue-200 via-purple-200 to-indigo-300 inset-0 overflow-hidden">
-      <BackgroundImage imageUrl={bgimg} opacity={0.7} />
-      <Box className="relative text-center overflow-hidden" height='100vh'>
-        <Flex direction='column' gap='4' justify='center' align='center' className=" h-full">
-          <Text size='9'>Gadhiya Groups</Text>
-          <Text size='4'>Hero Section Will Comming Soon.............!</Text>
+    <Box className="h-[74vh] px-6 bg-cover bg-center" style={{ backgroundImage: `url(${hero_bg})` }}>
+      <Container className="h-full">
+        <Flex justify='center' align='center' height='100%'>
+          <Flex width='70%' direction='column' gap='4' justify='center' align='center' height='100%'>
+            <Text className="text-textWhite text-center text-[70px] font-semibold">
+              Reliable <span className="text-yellow-400">Dental Equipment</span> for Every Practice
+            </Text>
+            <Text size='4' className="text-white text-center font-medium">
+              Explore a wide range of high-quality tools and technology, designed to elevate your clinic’s care. Fast shipping, expert support, and trusted brands.
+            </Text>
+            <Button variant="solid" size='4' radius="full" className="!bg-primary hover:!bg-footerbg">
+              <Phone /> Contact Now
+            </Button>
+          </Flex>
         </Flex>
-      </Box>
-      <Box className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-l from-pink-300 to-transparent rounded-full transform -translate-x-1/2 translate-y-1/2"></Box>
+      </Container>
     </Box>
-  )
+  );
 }

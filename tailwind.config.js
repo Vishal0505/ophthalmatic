@@ -6,11 +6,15 @@ export default {
   theme: {
     extend: {
       colors: {
-       primary: 'var(--primary-color)',             
+        primary: 'var(--primary-color)',
         secondary: 'var(--secondary-color)',
         background: 'var(--background-color)',
         textBlack: 'var(--text-color-black)',
-        textWhite: 'var(--text-color-white)',  
+        textWhite: 'var(--text-color-white)',
+        footerbg: 'var(--footer-bg)',
+        skyblue: 'var(--bg-sky-blue)',
+        textskyblue: 'var(--text-color-light-blue)',
+
       },
       keyframes: {
         slide: {
@@ -20,12 +24,7 @@ export default {
       },
       animation: {
         slide: 'slide 30s linear infinite',
-      },
-      colors: {
-        'sky-blue': '#EFF8FF',
-        'primary-blue' : '#284694',
-        'light-blue': '#527282'
-      },
+      }
     },
   },
   plugins: [],
