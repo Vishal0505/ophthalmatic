@@ -5,6 +5,13 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+       primary: 'var(--primary-color)',             
+        secondary: 'var(--secondary-color)',
+        background: 'var(--background-color)',
+        textBlack: 'var(--text-color-black)',
+        textWhite: 'var(--text-color-white)',  
+      },
       keyframes: {
         slide: {
           '0%': { transform: 'translateX(0)' },
@@ -12,7 +19,7 @@ export default {
         },
       },
       animation: {
-        slide: 'slide 30s  linear infinite',
+        slide: 'slide 30s linear infinite',
       },
       colors: {
         'sky-blue': '#EFF8FF',
@@ -22,4 +29,3 @@ export default {
   },
   plugins: [],
 }
-
