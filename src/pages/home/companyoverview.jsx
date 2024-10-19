@@ -20,61 +20,66 @@ export default function WhyChooseUs() {
               <Text size="7" weight="medium" className="text-black">
                 Trusted Quality, Unmatched Expertise
               </Text>
-              <Text size="3"  align="center" className="text-black">
+              <Text size="3" align="center" className="text-black">
                 These subtitles aim to convey trust, quality, and a focus on
                 professional partnership. Do any of these capture the tone
                 you're looking for?
               </Text>
             </Flex>
           </Box>
-          <Flex direction="row" justify="center" align="center" px="9" gap="6">
+          <Flex direction="row" justify="center" align="center" px="8" gap="6">
             <Box className="w-4/5">
               <Flex direction="column" align="end" gap="4">
                 <Flex direction="column">
-                  <Text align="right" weight="medium">
+                  <Text align="right" weight="medium" className="pb-1">
                     Premium Quality
                   </Text>
-                  <Text align="right">
+                  <Text align="right" className="text-light-blue">
                     We offer durable, high-performance equipment
                   </Text>
-                  <Text align="right">
+                  <Text align="right" className="text-light-blue">
                     from top manufacturers, ensuring the best
                   </Text>
-                  <Text align="right">results for your practice.</Text>
+                  <Text align="right" className="text-light-blue">
+                    results for your practice.
+                  </Text>
                 </Flex>
                 <Flex direction="column">
-                  <Text align="right" weight="medium">
+                  <Text align="right" weight="medium" className="pb-1">
                     Expert Guidance
                   </Text>
-                  <Text align="right">
+                  <Text align="right" className="text-light-blue">
                     Our team helps you find the right solutions
                   </Text>
-                  <Text align="right"> tailored to your practice.</Text>
+                  <Text align="right" className="text-light-blue">
+                    {" "}
+                    tailored to your practice.
+                  </Text>
                 </Flex>
               </Flex>
             </Box>
-            <Box>
+            <Box className="w-[460px]">
               <img src={Chair} />
             </Box>
             <Box className="w-4/5">
               <Flex direction="column" gap="4">
                 <Flex direction="column">
-                  <Text align="left" weight="medium">
+                  <Text align="left" weight="medium" className="pb-1">
                     Fast Delivery
                   </Text>
-                  <Text align="left">
+                  <Text align="left" className="text-light-blue">
                     Count on timely deliveries to keep your practice
                   </Text>
-                  <Text align="left">running smoothly.</Text>
+                  <Text align="left" className="text-light-blue">running smoothly.</Text>
                 </Flex>
                 <Flex direction="column">
-                  <Text align="left" weight="medium">
+                  <Text align="left" weight="medium" className="pb-1">
                     Competitive Prices
                   </Text>
-                  <Text align="left">
+                  <Text align="left" className="text-light-blue">
                     Get top-tier products at affordable prices,
                   </Text>
-                  <Text align="left">without sacrificing quality.</Text>
+                  <Text align="left" className="text-light-blue">without sacrificing quality.</Text>
                 </Flex>
               </Flex>
             </Box>

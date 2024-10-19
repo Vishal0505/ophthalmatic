@@ -23,7 +23,8 @@ export default {
       },
       colors: {
         'sky-blue': '#EFF8FF',
-        'primary-blue' : '#284694'
+        'primary-blue' : '#284694',
+        'light-blue': '#527282'
       },
     },
   },
