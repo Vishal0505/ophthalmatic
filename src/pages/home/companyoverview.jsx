@@ -4,7 +4,7 @@ import Chair from "../../assets/why-us/chair.png";
 export default function WhyChooseUs() {
   return (
     <>
-      <Box className="bg-sky-blue py-12 ">
+      <Box className="bg-skyblue py-12 ">
         <Flex direction="column" gap="4">
           <Box>
             <Flex
@@ -14,7 +14,7 @@ export default function WhyChooseUs() {
               gap="4"
               className="px-60"
             >
-              <Text size="2" className="text-primary-blue">
+              <Text size="2" className="text-primary">
                 Why Choose us
               </Text>
               <Text size="7" weight="medium" className="text-black">
@@ -23,7 +23,7 @@ export default function WhyChooseUs() {
               <Text size="3" align="center" className="text-black">
                 These subtitles aim to convey trust, quality, and a focus on
                 professional partnership. Do any of these capture the tone
-                you're looking for?
+                you’re looking for?
               </Text>
             </Flex>
           </Box>
@@ -34,13 +34,13 @@ export default function WhyChooseUs() {
                   <Text align="right" weight="medium" className="pb-1">
                     Premium Quality
                   </Text>
-                  <Text align="right" className="text-light-blue">
+                  <Text align="right" className="text-textskyblue">
                     We offer durable, high-performance equipment
                   </Text>
-                  <Text align="right" className="text-light-blue">
+                  <Text align="right" className="text-textskyblue">
                     from top manufacturers, ensuring the best
                   </Text>
-                  <Text align="right" className="text-light-blue">
+                  <Text align="right" className="text-textskyblue">
                     results for your practice.
                   </Text>
                 </Flex>
@@ -48,10 +48,10 @@ export default function WhyChooseUs() {
                   <Text align="right" weight="medium" className="pb-1">
                     Expert Guidance
                   </Text>
-                  <Text align="right" className="text-light-blue">
+                  <Text align="right" className="text-textskyblue">
                     Our team helps you find the right solutions
                   </Text>
-                  <Text align="right" className="text-light-blue">
+                  <Text align="right" className="text-textskyblue">
                     {" "}
                     tailored to your practice.
                   </Text>
@@ -67,19 +67,19 @@ export default function WhyChooseUs() {
                   <Text align="left" weight="medium" className="pb-1">
                     Fast Delivery
                   </Text>
-                  <Text align="left" className="text-light-blue">
+                  <Text align="left" className="text-textskyblue">
                     Count on timely deliveries to keep your practice
                   </Text>
-                  <Text align="left" className="text-light-blue">running smoothly.</Text>
+                  <Text align="left" className="text-textskyblue">running smoothly.</Text>
                 </Flex>
                 <Flex direction="column">
                   <Text align="left" weight="medium" className="pb-1">
                     Competitive Prices
                   </Text>
-                  <Text align="left" className="text-light-blue">
+                  <Text align="left" className="text-textskyblue">
                     Get top-tier products at affordable prices,
                   </Text>
-                  <Text align="left" className="text-light-blue">without sacrificing quality.</Text>
+                  <Text align="left" className="text-textskyblue">without sacrificing quality.</Text>
                 </Flex>
               </Flex>
             </Box>
