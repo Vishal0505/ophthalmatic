@@ -45,7 +45,7 @@ export default function Header() {
       </Box>
       <Box className='sticky top-0 z-50 text-textBlack text-base font-medium'>
         <header className="w-full bg-white shadow-md">
-          <Container className='px-4'>
+          <Container className='px-4 sm:px-0'>
             <Flex align="center" justify="between" className='py-7'>
               <Box className="text-2xl font-bold">
                 <NavLink to="/" activeClassName="text-gray-500">
