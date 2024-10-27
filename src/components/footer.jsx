@@ -1,107 +1,215 @@
-import { Flex, Separator, Text } from '@radix-ui/themes';
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from 'lucide-react';
-import { NavLink } from 'react-router-dom';
+import { Box, Flex, Separator, Text } from "@radix-ui/themes";
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPinIcon,
+  Phone,
+  Twitter
+} from "lucide-react";
+import { NavLink } from "react-router-dom";
 import logo from "../assets/logo/logo.png";
+import Container from "./ui/container";
 
 export default function Footer() {
   return (
     <>
-      <Flex direction='column' className='bg-sky-50 text-black be-red-500 z-40'>
-        <footer className="w-full  py-12 z-50 bg-sky-50">
-          <Flex gap='3' className="container mx-auto px-4" direction="column" width="100%">
-            <Flex className="flex-col md:flex-row items-start gap-8 xl:gap-9">
+      <Box className="bg-footerbg">
+        <Container>
+          <Flex direction="column">
+            <div className="grid grid-row-1 grid-flow-row sm:grid-cols-3 sm:grid-flow-col justify-items-center items-center py-7 sm:gap-0 gap-6 pl-4 sm:pl-0">
+              <Flex className="sm:flex-row flex-col items-center gap-4 sm:gap-2">
+                <Box className="border border-white rounded-full p-2 ">
+                  <Phone fill="white" />
+                </Box>
+                <Flex
+                  direction="column"
+                  className="items-center sm:items-start"
+                >
+                  <Text
+                    className="text-white text-lg text-center sm:text-start"
+                    weight="medium"
+                  >
+                    Contact
+                  </Text>
+                  <Text className="text-white text-sm text-center sm:text-start">
+                    +91 81402 59610
+                  </Text>
+                </Flex>
+              </Flex>
+              <Flex className="sm:flex-row flex-col items-center" gap="2">
+                <Box className="border border-white rounded-full p-2 ">
+                  <Mail fill="white" />
+                </Box>
+                <Flex
+                  direction="column"
+                  className="items-center sm:items-start"
+                >
+                  <Text
+                    className="text-white text-lg text-center sm:text-start"
+                    weight="medium"
+                  >
+                    Mail
+                  </Text>
+                  <Text className="text-white text-sm text-center sm:text-start">
+                    export@gadhiyagroup.com
+                  </Text>
+                </Flex>
+              </Flex>
+              <Flex className="sm:flex-row flex-col items-center" gap="2">
+                <Box className="border border-white rounded-full p-2 ">
+                  <MapPinIcon fill="white" />
+                </Box>
+                <Flex
+                  direction="column"
+                  className="items-center sm:items-start"
+                >
+                  <Text
+                    className="text-white text-lg text-start"
+                    weight="medium"
+                  >
+                    Address
+                  </Text>
+                  <Text className="text-white text-sm text-start">
+                    {" "}
+                    525, 5th Floor, The Nikol Trade Center, Nr.
+                  </Text>
+                  <Text className="text-white text-sm text-start">
+                    {" "}
+                    Kanba Hospital, Nikol, Ahmedabad - 382350
+                  </Text>
+                </Flex>
+              </Flex>
+            </div>
+            <Separator size="4" color="green" />
+            <div className="grid grid-cols-1 sm:grid-cols-4 py-6 px-4 bg-footerbg justify-items-center  gap-8 sm:gap-0">
+              <Box className="py-8 sm:py-0">
+                <NavLink to="/" activeClassName="text-black">
+                  <img
+                    src={logo}
+                    alt="Gadhiya Group Logo"
+                    className="h-auto w-52"
+                  />
+                </NavLink>
+              </Box>
+              <Box>
+                <Flex direction="column" gap="2">
+                  <Text
+                    as="h4"
+                    className="text-lg font-bold text-center sm:text-start text-white mb-2 sm:mb-4"
+                  >
+                    Quick Links
+                  </Text>
 
-              <Flex direction='column' gap='3' className="text-lg w-full md:w-5/12">
-                <Flex>
-                  <NavLink to="/" activeClassName="text-black">
-                    <img src={logo} alt="Gadhiya Group Logo" className="h-auto w-52" />
+                  <NavLink
+                    to="/about-us"
+                    className="text-white hover:underline sm:text-start text-center"
+                  >
+                    About Us
+                  </NavLink>
+                  <NavLink
+                    to="/about-us"
+                    className="text-white hover:underline sm:text-start text-center"
+                  >
+                    Why Us
+                  </NavLink>
+                  <NavLink
+                    to="/ware-house"
+                    className="text-white hover:underline sm:text-start text-center"
+                  >
+                    Workshop
+                  </NavLink>
+                  <NavLink
+                    to="/contact"
+                    className="text-white hover:underline sm:text-start text-center"
+                  >
+                    Contact Us
                   </NavLink>
                 </Flex>
-                <Flex direction='column' gap='6'>
-                  <Flex gap='3' align='center' className="items-start">
-                    <MapPin size='60' />
-                    <Text className="text-justify text-black text-sm md:text-base pe-5">
-                      Corporate Office No 328, 29, 30, 3rd Floor, Dariyalal Square, Above HDFC Bank, Morbi-Rajkot Highway, At- Sanala, Morbi - Pin: 363641 Gujarat, INDIA.
-                    </Text>
-                  </Flex>
-                  <Flex className='text-black flex-col xl:flex-row gap-4 xl:gap-9'>
-                    <Flex gap='3' align='center'>
-                      <Phone size='25' />
-                      <Flex direction='column' className='leading-1'>
-                        <Text className="text-sm">For More Inquiry</Text>
-                        <a href='tel:+918140259610' className=' text-black text-sm'>
-                          +91 8140259610
-                        </a>
-                      </Flex>
-                    </Flex>
-                    <Flex gap='3' align='center'>
-                      <Mail size='25' />
-                      <Flex direction='column' className='leading-1'>
-                        <Text className="text-sm">To Send Mail</Text>
-                        <a href='mailto:export@gadhiyagroup.com' className='text-sm text-black'>
-                          export@gadhiyagroup.com
-                        </a>
-                      </Flex>
-                    </Flex>
-                  </Flex>
+              </Box>
+              <Box>
+                <Flex direction="column" gap="2">
+                  <Text
+                    as="h4"
+                    className="text-lg font-bold text-center sm:text-start text-white mb-2 sm:mb-4"
+                  >
+                    Services
+                  </Text>
+                  <NavLink
+                    to="/csr-activity"
+                    className="text-white hover:underline sm:text-start text-center"
+                  >
+                    CSR
+                  </NavLink>
+                  <NavLink
+                    to="/export-activity"
+                    className="text-white hover:underline sm:text-start text-center"
+                  >
+                    Export Activity
+                  </NavLink>
+                  <NavLink
+                    to="/international-conference"
+                    className="text-white hover:underline sm:text-start text-center"
+                  >
+                    International Conference
+                  </NavLink>
+                  <NavLink
+                    to="/certificate"
+                    className="text-white hover:underline sm:text-start text-center"
+                  >
+                    Certificate
+                  </NavLink>
                 </Flex>
-              </Flex>
-
-              <Flex className="w-full md:w-4/12 flex-col z-50">
-                <Text as="h4" className="text-lg font-bold mb-4">Quick Links</Text>
-                <Flex gap='9'>
-                  <Flex direction='column' className='text-nowrap' gap='4'>
-                    <NavLink to="/about-us" className='text-black hover:underline'>About Us</NavLink>
-                    <NavLink to="/about-us" className='text-black hover:underline'>Why Us</NavLink>
-                    <NavLink to="/ware-house" className='text-black hover:underline'>Workshop</NavLink>
-                    <NavLink to="/contact" className='text-black hover:underline'>Contact Us</NavLink>
-                  </Flex>
-                  <Flex direction='column' className='text-nowrap' gap='4'>
-                    <NavLink to="/csr-activity" className='text-black hover:underline'>CSR</NavLink>
-                    <NavLink to="/export-activity" className='text-black hover:underline'>Export Activity</NavLink>
-                    <NavLink to="/international-conference" className='text-black hover:underline'>International Conference</NavLink>
-                    <NavLink to="/certificate" className='text-black hover:underline'>Certificate</NavLink>
-                  </Flex>
+              </Box>
+              <Box>
+                <Flex direction="column" gap="2">
+                  <Text
+                    as="h4"
+                    className="text-lg font-bold text-center sm:text-start text-white mb-2 sm:mb-4"
+                  >
+                    Our Products{" "}
+                  </Text>
+                  <NavLink
+                    to="/csr-activity"
+                    className="text-white hover:underline sm:text-start text-center"
+                  >
+                    Ceramics & Bathware
+                  </NavLink>
+                  <NavLink
+                    to="/export-activity"
+                    className="text-white hover:underline sm:text-start text-center"
+                  >
+                    Wall Clocks & Gift Items
+                  </NavLink>
+                  <NavLink
+                    to="/international-conference"
+                    className="text-white hover:underline sm:text-start text-center"
+                  >
+                    Rubber Mats & Other Products
+                  </NavLink>
                 </Flex>
+              </Box>
+            </div>
+            <Separator size="4" color="green" />
+            <Flex
+              className="flex-col sm:flex-row gap-4 sm:gap-0"
+              align="center"
+              px="4"
+            >
+              <Flex gap="4" py="4">
+                <Instagram color="white" className="size-5" />
+                <Facebook color="white" className="size-5" />
+                <Twitter color="white" fill="white" className="size-5" />
+                <Linkedin color="white" fill="white" className="size-5" />
               </Flex>
-
-              <Flex direction='column' className="w-full md:w-3/12 ">
-                <Text as="h4" className="text-lg font-bold mb-4">Our Products</Text>
-                <Flex direction='column' gap='4'>
-                  <NavLink to="/csr-activity" className='text-black hover:underline'>Ceramics & Bathware</NavLink>
-                  <NavLink to="/export-activity" className='text-black hover:underline'>Wall Clocks & Gift Items</NavLink>
-                  <NavLink to="/international-conference" className='text-black hover:underline'>Rubber Mats & Other Products</NavLink>
-                  <Flex direction='column'>
-                    <Text as="h4" className="text-lg font-bold mb-4">Follow Us On</Text>
-                    <Flex gap='4'>
-                      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook" className="text-black hover:text-slate-800">
-                        <Facebook />
-                      </a>
-                      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter" className="text-black hover:text-slate-800">
-                        <Twitter />
-                      </a>
-                      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" className="text-black hover:text-slate-800">
-                        <Instagram />
-                      </a>
-                      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn" className="text-black hover:text-slate-800">
-                        <Linkedin />
-                      </a>
-                    </Flex>
-                  </Flex>
-                </Flex>
-              </Flex>
-
+              <Text className="text-white" size="2">
+                © Ophthalmatic 2024 All right reserved.
+              </Text>
             </Flex>
           </Flex>
-        </footer>
-        <Flex className='w-full z-50'>
-          <Separator orientation="horizontal" className="w-full bg-black h-[1px] z-50" />
-        </Flex>
-        <Flex justify='center' className="text-black bg-sky-50 text-sm py-6 z-50">
-          © 2023, All Rights Reserved
-        </Flex>
-      </Flex>
+        </Container>
+      </Box>
     </>
-
   );
 }
