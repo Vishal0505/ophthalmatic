@@ -1,8 +1,8 @@
 import { Flex } from "@radix-ui/themes";
 import AboutUs from "../about-us/page";
+import Animation from "./animation";
 import Certificates from "./certificates";
 import CompanyOverview from "./companyoverview";
-import Founders from "./founders";
 import Herosection from "./herosection";
 import OurHorizon from "./our-horizon";
 import OurValue from "./our-value";
@@ -13,7 +13,7 @@ export default function HomePage() {
       <Herosection />
       <AboutUs />
       <CompanyOverview />
-      <Founders />
+      <Animation />
       <OurHorizon />
       <OurValue />
       <Certificates />
