@@ -5,7 +5,7 @@ import ContactPage from './pages/contact-us/page';
 import CsrActivity from './pages/csr-activity/page';
 import ErrorPage from './pages/error';
 import ExportActivity from './pages/export-activity/page';
-import CompanyOverview from './pages/home/companyoverview';
+import Whyus from './pages/home/why-us';
 import Founders from './pages/home/founders';
 import Certificates from './pages/certificates/page';
 import HomePage from './pages/home/page';
@@ -40,8 +40,8 @@ export const routeConfig = [
         element: <Founders />,
       },
       {
-        path: 'company-overview',
-        element: <CompanyOverview />,
+        path: 'why-us',
+        element: <Whyus />,
       },
       {
         path: 'corporate-house',
