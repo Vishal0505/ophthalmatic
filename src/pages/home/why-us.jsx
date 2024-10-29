@@ -1,17 +1,25 @@
 import { Box, Flex, Text } from "@radix-ui/themes";
 import Chair from "../../assets/why-us/chair.png";
+import BgOne from  "../../assets/why-us/trusted_a_bg.png"
+import BgTwo from  "../../assets/why-us/trusted_b_bg.png"
 
 export default function WhyChooseUs() {
   return (
     <>
-      <Box className="bg-skyblue py-12 ">
+      <Box className="bg-skyblue py-12  relative">
+      <Box className="absolute top-0 right-0 w-52 " >
+        <img src={BgOne}></img>
+      </Box>
+      <Box className="absolute bottom-0 left-0 w-52" >
+        <img src={BgTwo}></img>
+      </Box>
         <Flex direction="column" gap="4">
           <Box>
             <Flex
               justify="center"
               align="center"
               direction="column"
-              gap="4"
+              gap="6"
               className="px-60"
             >
               <Text size="2" className="text-primary">
@@ -20,16 +28,16 @@ export default function WhyChooseUs() {
               <Text size="7" weight="medium" className="text-black">
                 Trusted Quality, Unmatched Expertise
               </Text>
-              <Text size="3" align="center" className="text-black">
+              {/* <Text size="3" align="center" className="text-black">
                 These subtitles aim to convey trust, quality, and a focus on
                 professional partnership. Do any of these capture the tone
                 you’re looking for?
-              </Text>
+              </Text> */}
             </Flex>
           </Box>
           <Flex direction="row" justify="center" align="center" px="8" gap="6">
             <Box className="w-4/5">
-              <Flex direction="column" align="end" gap="4">
+              <Flex direction="column" align="end" gap="6">
                 <Flex direction="column">
                   <Text align="right" weight="medium" className="pb-1">
                     Premium Quality
@@ -61,10 +69,10 @@ export default function WhyChooseUs() {
             <Box className="w-[460px]">
               <img src={Chair} />
             </Box>
-            <Box className="w-4/5">
-              <Flex direction="column" gap="4">
+            <Box className="w-4/5" >
+              <Flex direction="column" gap="6">
                 <Flex direction="column">
-                  <Text align="left" weight="medium" className="pb-1">
+                  <Text align="left" weight="medium" className="pb-1" >
                     Fast Delivery
                   </Text>
                   <Text align="left" className="text-textskyblue">
