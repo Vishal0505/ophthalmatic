@@ -1,38 +1,145 @@
-import { Box, Flex, Heading } from "@radix-ui/themes";
-import bgimg from "../../assets/bg/bgimg.jpg";
+import { Avatar, Box, Card, Flex, Text } from "@radix-ui/themes";
 import educationIcon from "../../assets/horizon/education.png";
 import foundationIcon from "../../assets/horizon/foundation.png";
 import hospitalIcon from "../../assets/horizon/hospital.png";
 import wellnessIcon from "../../assets/horizon/wellness.png";
-import BackgroundImage from "../../components/ui/background-image";
+import { useState } from "react";
+import Container from "../../components/ui/container";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function OurHorizon() {
-  const services = [
-    { name: "Education", icon: educationIcon },
-    { name: "Multi Speciality Hospital", icon: hospitalIcon },
-    { name: "Charitable Foundation", icon: foundationIcon },
-    { name: "Wellness", icon: wellnessIcon },
-  ];
+const items = [
+  {
+    id: 1,
+    comment:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less",
+    profile:
+      "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop",
+    name: "Mark Alexander",
+  },
+  {
+    id: 2,
+    comment:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less",
+    profile:
+      "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop",
+    name: "Mark Alexander",
+  },
+  {
+    id: 3,
+    comment:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less",
+    profile:
+      "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop",
+    name: "Mark Alexander",
+  },
+  {
+    id: 4,
+    comment:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less",
+    profile:
+      "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop",
+    name: "Mark Alexander",
+  },
+  {
+    id: 5,
+    comment:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less",
+    profile:
+      "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop",
+    name: "Mark Alexander",
+  },
+  {
+    id: 6,
+    comment:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less",
+    profile:
+      "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop",
+    name: "Mark Alexander",
+  },
+  {
+    id: 7,
+    comment:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less",
+    profile:
+      "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop",
+    name: "Mark Alexander",
+  },
+  {
+    id: 8,
+    comment:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less",
+    profile:
+      "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop",
+    name: "Mark Alexander",
+  },
+];
+export default function OurHorizon({ itemsPerSlide = 4 }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const totalSlides = Math.ceil(items.length / itemsPerSlide);
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? totalSlides - 1 : prevIndex - 1
+    );
+  };
+
+  const currentItems = items.slice(
+    currentIndex * itemsPerSlide,
+    currentIndex * itemsPerSlide + itemsPerSlide
+  );
 
   return (
-    <Box className="relative py-16 bg-gradient-to-b from-indigo-300 via-purple-300 to-blue-300  overflow-hidden">
-      <BackgroundImage imageUrl={bgimg} opacity={0.7} />
-      <Box className="relative max-w-6xl mx-auto text-center z-10">
-        <Heading as="h2" className="text-4xl font-extrabold mb-12 text-gray-900">
-          Our Horizon
-        </Heading>
-        <Flex wrap="wrap" justify="center" gap="6">
-          {services.map((service, index) => (
-            <Flex key={index} className="relative bg-white p-6 rounded-lg border border-gray-300 shadow-lg w-full sm:w-1/2 md:w-1/3 flex flex-col items-center justify-center mx-2 transition-transform transform hover:scale-105" >
-              <Flex justify='center' align='center'>
-                <img src={service.icon} alt={service.name} className="h-32 object-contain"
-                />
-              </Flex>
-            </Flex>
-          ))}
+    <Box>
+      <Container>
+        <Flex gap="4" direction="column">
+          <Flex direction="column" justify="center" align="center">
+            <Text size="2" className="text-primary" align="right">
+              TestiMonial
+            </Text>
+            <Text size="4" weight="medium">
+              What Our Clients Are Saying
+            </Text>
+          </Flex>
+          <Flex>
+            {currentItems.map((item) => (
+              <div
+                key={item.id}
+                className="flex-shrink-0 w-full sm:w-2/5 md:w-1/3 lg:w-1/4 p-2 "
+              >
+                <Card className="bg-skyblue">
+                  <Flex direction="column" gap="6" p={"1"}>
+                    <Text size="3">
+                     {item.comment}
+                    </Text>
+                    <Flex gap="4" align="center">
+                      <Avatar
+                        src={item.profile}
+                        fallback="A"
+                      />
+                      <Text weight="medium">{item.name}</Text>
+                    </Flex>
+                  </Flex>
+                </Card>
+              </div>
+            ))}
+          </Flex>
+          <Flex gap="2" justify="center">
+            <ChevronLeft
+              onClick={handlePrev}
+              className=" border border-blue-950 rounded-full size-8 p-2"
+            />
+            <ChevronRight
+              onClick={handleNext}
+              className=" border border-blue-950 rounded-full size-8 p-2"
+            />
+          </Flex>
         </Flex>
-      </Box>
-      <Box className="absolute top-0 right-0 w-32 h-32  bg-gradient-to-r from-blue-300 to-transparent rounded-full transform translate-x-1/2 translate-y-1/2"></Box>
+      </Container>
     </Box>
   );
 }
