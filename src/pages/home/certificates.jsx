@@ -1,4 +1,4 @@
-import { Box, Heading } from "@radix-ui/themes";
+import { Box, Flex, Heading, Text } from "@radix-ui/themes";
 import bgimg from "../../assets/bg/bgimg.jpg";
 import img1 from "../../assets/certificates/1.png";
 import img10 from "../../assets/certificates/10.png";
@@ -48,12 +48,17 @@ export default function Certificates() {
   return (
     <React.Fragment>
     
-    <Box className="relative inset-0 py-16 bg-gradient-to-b from-indigo-300 via-purple-300 to-blue-300 ">
-      <BackgroundImage imageUrl={bgimg} opacity={0.7} />
-      <Box className="relative max-w-full mx-auto text-center z-10">
-        <Heading as="h2" className="text-4xl font-extrabold mb-12 text-gray-900">
-        Our Accomplishments
-        </Heading>
+    {/* <Box className="relative inset-0 py-16 bg-gradient-to-b from-indigo-300 via-purple-300 to-blue-300 "> */}
+      {/* <BackgroundImage imageUrl={bgimg} opacity={0.7} /> */}
+      <Box className=" max-w-full mx-auto text-center py-6">
+      <Flex direction="column" justify="center" align="center">
+            <Text size="2" className="text-primary" align="right">
+            Trusted & Certified
+            </Text>
+            <Text size="4" weight="medium">
+            Recognized for quality and industry excellence.
+            </Text>
+          </Flex>
       <div className="overflow-hidden w-full h-auto ">
         <div className="flex w-max animate-slide gap-4 py-4">
           {images.map((image, index) => (
@@ -75,7 +80,7 @@ export default function Certificates() {
         </div>
       </div>
     </Box>
-    </Box>
+    {/* </Box> */}
     </React.Fragment>
   );
 }

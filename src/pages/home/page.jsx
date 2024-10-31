@@ -2,10 +2,9 @@ import { Flex } from "@radix-ui/themes";
 import AboutUs from "../about-us/page";
 import Animation from "./animation";
 import Certificates from "./certificates";
+import HaveQuestion from "./have-question";
 import Herosection from "./herosection";
 import OurHorizon from "./our-horizon";
-import OurProducts from "./our-products";
-import OurValue from "./our-value";
 import WhyChooseUs from "./why-us";
 
 export default function HomePage() {
@@ -14,10 +13,10 @@ export default function HomePage() {
       <Herosection />
       <AboutUs />
       <WhyChooseUs />
+      {/* <OurProducts /> */}
       <Animation />
-      <OurProducts />
       <OurHorizon />
-      <OurValue />
+      <HaveQuestion  />
       <Certificates />
     </Flex>
   )
