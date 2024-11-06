@@ -7,12 +7,11 @@ import {
   TextArea,
   TextField,
 } from "@radix-ui/themes";
-import Container from "../../components/ui/container";
 
 export default function HaveQuestion() {
   return (
     <>
-      <Container className="bg-skyblue">
+      <Flex className="bg-skyblue" justify='center'>
         <Box className=" py-10 sm:py-12">
           <Flex className="justify-center gap-4 p-2 flex-col sm:flex-row ">
             <Box className="flex-1 flex justify-end text-start flex-col sm:flex-row ">
@@ -93,20 +92,20 @@ export default function HaveQuestion() {
                 </Flex>
                 <TextArea radius="full" size="3" placeholder="Message" />
                 <Flex className="w-11 justify-end items-end" >
-                <Button
-                  variant="solid"
-                  size="3"
-                  radius="full"
-                  className="!bg-primary hover:!bg-footerbg "
-                >
-                  Contact Now
-                </Button>
+                  <Button
+                    variant="solid"
+                    size="3"
+                    radius="full"
+                    className="!bg-primary hover:!bg-footerbg "
+                  >
+                    Contact Now
+                  </Button>
                 </Flex>
               </Flex>
             </Box>
           </Flex>
         </Box>
-      </Container>
+      </Flex>
     </>
   );
 }
