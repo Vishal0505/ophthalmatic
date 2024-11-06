@@ -1,8 +1,7 @@
 import { Box, Button, Flex, Text } from "@radix-ui/themes";
-import Container from "../../components/ui/container";
-import Phone from "../../components/icons/phone";
 import animation from "../../assets/animation/animation.jpg";
 import Play from "../../components/icons/play";
+import Container from "../../components/ui/container";
 
 export default function Animation() {
   return (

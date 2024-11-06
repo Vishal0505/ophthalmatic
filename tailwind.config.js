@@ -10,6 +10,7 @@ export default {
         secondary: 'var(--secondary-color)',
         background: 'var(--background-color)',
         textBlack: 'var(--text-color-black)',
+        textGray: 'var(--text-color-gray)',
         textWhite: 'var(--text-color-white)',
         footerbg: 'var(--footer-bg)',
         skyblue: 'var(--bg-sky-blue)',

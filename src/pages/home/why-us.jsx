@@ -15,13 +15,7 @@ export default function WhyChooseUs() {
         </Box>
         <Flex direction="column" gap="4">
           <Box>
-            <Flex
-              // justify="center"
-              // align="center"
-              // direction="column"
-              // gap="6"
-              className=" justify-center items-center flex-col gap-4"
-            >
+            <Flex className=" justify-center items-center flex-col gap-4">
               <Text size="2" className="text-primary">
                 Why Choose us
               </Text>
@@ -35,7 +29,7 @@ export default function WhyChooseUs() {
             justify="center"
             align="center"
             px="8"
-            // gap="6"
+          // gap="6"
           >
             <Box className="">
               <Flex className="flex-col gap-4 sm:gap-8 ">
@@ -70,7 +64,7 @@ export default function WhyChooseUs() {
               <img src={Chair} />
             </Box>
             <Box className="">
-            <Flex className="flex-col gap-4 sm:gap-8 ">
+              <Flex className="flex-col gap-4 sm:gap-8 ">
 
                 <Flex direction="column">
                   <Text className="pb-1 text-base sm:text-lg text-start  font-medium">

@@ -1,11 +1,7 @@
 import { Avatar, Box, Card, Flex, Text } from "@radix-ui/themes";
-import educationIcon from "../../assets/horizon/education.png";
-import foundationIcon from "../../assets/horizon/foundation.png";
-import hospitalIcon from "../../assets/horizon/hospital.png";
-import wellnessIcon from "../../assets/horizon/wellness.png";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import Container from "../../components/ui/container";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const items = [
   {
