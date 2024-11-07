@@ -1,5 +1,5 @@
-import { Box, Flex, Heading, Text } from "@radix-ui/themes";
-import bgimg from "../../assets/bg/bgimg.jpg";
+import { Box, Flex, Text } from "@radix-ui/themes";
+import React from "react";
 import img1 from "../../assets/certificates/1.png";
 import img10 from "../../assets/certificates/10.png";
 import img11 from "../../assets/certificates/11.png";
@@ -19,8 +19,6 @@ import img6 from "../../assets/certificates/6.png";
 import img7 from "../../assets/certificates/7.png";
 import img8 from "../../assets/certificates/8.png";
 import img9 from "../../assets/certificates/9.png";
-import BackgroundImage from "../../components/ui/background-image";
-import React from "react";
 
 const images = [
   img1,
