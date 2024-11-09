@@ -14,7 +14,7 @@ export default function HomePage() {
       <Herosection />
       <AboutUs />
       <WhyChooseUs />
-      <OurProducts />
+      <OurProducts title={"Our Products"} subTitles={"Explore Our Premium Products"}/>
       <Animation />
       <OurHorizon />
       <HaveQuestion  />

@@ -7,7 +7,8 @@
     --text-color-white: #FFFFFF;
     --text-color-light-blue: #527282;
     --footer-bg: #0D1B2A;
-    --bg-sky-blue: #EFF8FF
+    --bg-sky-blue: #EFF8FF;
+    --product-bg: #f6f6f6;
 }
 
 @tailwind base;

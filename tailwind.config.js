@@ -7,6 +7,7 @@ export default {
         primary: "var(--primary-color)",
         secondary: "var(--secondary-color)",
         background: "var(--background-color)",
+        productbackground: "var(--product-bg)",
         textBlack: "var(--text-color-black)",
         textGray: 'var(--text-color-gray)',
         textWhite: "var(--text-color-white)",

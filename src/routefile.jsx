@@ -13,6 +13,7 @@ import InternationalConference from './pages/international-conference/page';
 import OurCorporateHouse from './pages/our-corporate-house/page';
 import OurWareHouse from './pages/our-warehouse/page';
 import ProductPage from './pages/products/page';
+import SpecificProductPage from './pages/products/product-detail';
 
 export const routeConfig = [
   {
@@ -26,6 +27,10 @@ export const routeConfig = [
       {
         path: 'product',
         element: <ProductPage />,
+      },
+      {
+        path: 'product-detail',
+        element: <SpecificProductPage />,
       },
       {
         path: 'about-us',

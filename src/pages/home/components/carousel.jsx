@@ -29,7 +29,7 @@ const Slider = ({
   );
 
   return (
-    <div className=" w-full overflow-hidden px-4 ">
+    <div className=" w-full overflow-hidden px-4  border border-green-600">
       <Flex justify="between" pb="4">
         <Flex direction="column" align="start">
           <Text size="2" className="text-primary" align="right">
@@ -51,7 +51,7 @@ const Slider = ({
         </Flex>
       </Flex>
       <div
-        className="flex "
+        className="flex"
         // style={{
         //   transform: `translateX(-${currentIndex * 50}%)`,
         // }}
@@ -59,7 +59,7 @@ const Slider = ({
         {currentItems.map((item) => (
           <div
             key={item.id}
-            className="flex-shrink-0 w-full sm:w-2/5 md:w-1/3 lg:w-1/4 px-4 "
+            className="flex-shrink-0 px-4 border border-red-600"
           >
             <div className="p-4 bg-white rounded-md border border-gray-300">
               <img
