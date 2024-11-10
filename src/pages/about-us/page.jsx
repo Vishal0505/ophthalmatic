@@ -48,7 +48,7 @@ export default function AboutUs() {
                     </Flex>
                 </Flex>
             )}
-            <Container>
+            <Container >
                 <Flex direction='column' gap='8'>
                     <Flex align="center" justify="center" className={`flex-col sm:flex-row ${isAboutPage && "mt-12"}`} gap="7">
                         <Flex className="flex-1 sm:p-0 p-4">

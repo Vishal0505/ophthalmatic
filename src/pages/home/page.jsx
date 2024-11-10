@@ -6,6 +6,7 @@ import HaveQuestion from "./have-question";
 import Herosection from "./herosection";
 import OurHorizon from "./our-horizon";
 import WhyChooseUs from "./why-us";
+import OurProducts from "./our-products";
 
 export default function HomePage() {
   return (
@@ -13,7 +14,7 @@ export default function HomePage() {
       <Herosection />
       <AboutUs />
       <WhyChooseUs />
-      {/* <OurProducts /> */}
+      <OurProducts title={"Our Products"} subTitles={"Explore Our Premium Products"}/>
       <Animation />
       <OurHorizon />
       <HaveQuestion  />

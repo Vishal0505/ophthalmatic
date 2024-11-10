@@ -101,6 +101,8 @@ export default function OurHorizon({ itemsPerSlide = 4 }) {
               What Our Clients Are Saying
             </Text>
           </Flex>
+        <div className="w-full overflow-hidden px-4">
+
           <Flex>
             {currentItems.map((item) => (
               <div
@@ -134,6 +136,7 @@ export default function OurHorizon({ itemsPerSlide = 4 }) {
               className=" border border-blue-950 rounded-full size-8 p-2"
             />
           </Flex>
+          </div>
         </Flex>
       </Container>
     </Box>
