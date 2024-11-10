@@ -2,7 +2,6 @@ import { Box, Card, Flex, Table, Text } from "@radix-ui/themes";
 import Prod1 from "../../assets/products/prem-1.png";
 import Container from "../../components/ui/container";
 import OurProducts from "../home/our-products";
-import { product } from "./constant";
 import HaveQuestion from "../home/have-question";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -19,7 +18,7 @@ export default function SpecificProductPage() {
         <Container>
           <div className="flex flex-col gap-6 py-6">
             <Card>
-              <div className=" flex justify-center gap-16 px-8 py-6 ">
+              <div className=" flex flex-col sm:flex-row justify-center gap-8 sm:gap-16 px-2 sm:px-8 py-6 sm:py-6 ">
                 <img
                   src={product.imageUrl}
                   alt={product.name}

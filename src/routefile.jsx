@@ -22,6 +22,7 @@ export const routeConfig = [
     children: [
       {
         index: true,
+        path: '',
         element: <HomePage />,
       },
       {

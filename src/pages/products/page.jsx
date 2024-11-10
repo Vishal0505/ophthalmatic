@@ -9,57 +9,58 @@ import Prod4 from "../../assets/products/prem-4.png";
 import Container from "../../components/ui/container";
 
 import { useNavigate } from "react-router-dom";
-import { LogIn } from "lucide-react";
-const products = [
-  {
-    id: 1,
-    name: "Ophthalmic Refraction Unit ",
-    category: "(OU-03) ",
-    imageUrl: Prod1,
-  },
-  {
-    id: 2,
-    name: " Ophthalmic Operation Table ",
-    category: "(OT - 02)",
-    imageUrl: Prod2,
-  },
-  {
-    id: 3,
-    name: "Ophthalmic Operation Table ",
-    category: "(OT - 01) ",
-    imageUrl: Prod3,
-  },
-  {
-    id: 4,
-    name: "Surgeon’s Chair ",
-    category: "(SC-01)",
-    imageUrl: Prod4,
-  },
-  {
-    id: 5,
-    name: "Ophthalmic Operation Table ",
-    category: "(OT - 01) ",
-    imageUrl: Prod1,
-  },
-  {
-    id: 6,
-    name: "Ophthalmic Refraction Unit ",
-    category: "(OU-03) ",
-    imageUrl: Prod2,
-  },
-  {
-    id: 7,
-    name: "Ophthalmic Refraction Unit ",
-    category: "(OU-03) ",
-    imageUrl: Prod2,
-  },
-  {
-    id: 8,
-    name: "Ophthalmic Refraction Unit ",
-    category: "(OU-03) ",
-    imageUrl: Prod2,
-  },
-];
+import { Categories, Products } from "./constant";
+import { useState } from "react";
+// const products = [
+//   {
+//     id: 1,
+//     name: "Ophthalmic Refraction Unit ",
+//     category: "(OU-03) ",
+//     imageUrl: Prod1,
+//   },
+//   {
+//     id: 2,
+//     name: " Ophthalmic Operation Table ",
+//     category: "(OT - 02)",
+//     imageUrl: Prod2,
+//   },
+//   {
+//     id: 3,
+//     name: "Ophthalmic Operation Table ",
+//     category: "(OT - 01) ",
+//     imageUrl: Prod3,
+//   },
+//   {
+//     id: 4,
+//     name: "Surgeon’s Chair ",
+//     category: "(SC-01)",
+//     imageUrl: Prod4,
+//   },
+//   {
+//     id: 5,
+//     name: "Ophthalmic Operation Table ",
+//     category: "(OT - 01) ",
+//     imageUrl: Prod1,
+//   },
+//   {
+//     id: 6,
+//     name: "Ophthalmic Refraction Unit ",
+//     category: "(OU-03) ",
+//     imageUrl: Prod2,
+//   },
+//   {
+//     id: 7,
+//     name: "Ophthalmic Refraction Unit ",
+//     category: "(OU-03) ",
+//     imageUrl: Prod2,
+//   },
+//   {
+//     id: 8,
+//     name: "Ophthalmic Refraction Unit ",
+//     category: "(OU-03) ",
+//     imageUrl: Prod2,
+//   },
+// ];
 const data = [
   {
     id: 1,
@@ -187,66 +188,64 @@ const data = [
 ];
 
 export default function ProductPage() {
+  const [selectedCategory, setSelectedCategory] = useState(Categories[0]);
   let navigate = useNavigate();
+
+  const filteredProducts = Products.filter(
+    (product) => product.category === selectedCategory
+  );
   return (
     <Box>
       <Box className="bg-custom-gradient">
-        <Flex className="  justify-center items-center gap-2 flex-col py-10">
+        <Flex className="  justify-center items-center gap-2 flex-col py-12">
           <Flex className="flex-row gap-2">
-            <Text className="text-2xl font-medium text-primary">Our</Text>
-            <Text className="text-2xl font-medium">Products</Text>
+            <Text className="text-4xl font-medium text-primary">Our</Text>
+            <Text className="text-4xl font-medium">Products</Text>
           </Flex>
-          <Text>
-            Home / <Text className="text-primary"> Our Products </Text>
-          </Text>
+          <Flex>
+            <Text
+              className="cursor-pointer hover:text-primary"
+              onClick={() => {
+                navigate("/");
+              }}
+            >
+              Home /&nbsp;
+            </Text>
+            <Text className="text-primary"> Our Products </Text>
+          </Flex>
         </Flex>
       </Box>
       <Container>
         <>
-          {/* <Box>
-            <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 py-6 bg-productbackground">
-              {products.map((item) => (
-                <div
-                  key={item.id}
-                  className="px-4 "
-                  onClick={() => {
-                    navigate("/product-detail");
-                  }}
+          <div className="flex justify-start sm:justify-center gap-4 py-8  overflow-auto	">
+            {Categories.map((category, index) => (
+              <Button
+                key={index}
+                size="3"
+                color={selectedCategory === category ? "" : "gray"}
+                variant={selectedCategory === category ? "solid" : "outline"}
+                radius="medium"
+                className={`$
+                  selectedCategory === category ? "!bg-primary" : "!bg-white !border !border-red-300"
+                `}
+                onClick={() => setSelectedCategory(category)}
+              >
+                <Text
+                  className={`${
+                    selectedCategory === category ? "text-white" : "text-black"
+                  } `}
                 >
-                  <div className="p-4 bg-white rounded-md border border-gray-300">
-                    <img
-                      src={item.imageUrl}
-                      alt={item.name}
-                      className="w-full h-56 object-cover rounded-md mb-4"
-                    />
-                    <Flex justify="center" direction="column">
-                      <Text
-                        align="center"
-                        className="text-base font-medium text-center "
-                      >
-                        {item.name}
-                      </Text>
-                      <Text
-                        align="center"
-                        className="text-base font-medium text-center "
-                      >
-                        {item.category}
-                      </Text>
-                    </Flex>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Box> */}
+                  {category}
+                </Text>
+              </Button>
+            ))}
+          </div>
           <Box>
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 py-6 bg-productbackground">
-              {data.map((item) => (
+              {filteredProducts.map((item) => (
                 <div
                   key={item.id}
                   className="px-4 "
-                  // onClick={() => {
-                  //   navigate("/product-detail");
-                  // }}
                   onClick={() => {
                     navigate("/product-detail", { state: { product: item } });
                   }}
@@ -262,13 +261,13 @@ export default function ProductPage() {
                         align="center"
                         className="text-base font-medium text-center "
                       >
-                        {item.name}
+                        {item.category}
                       </Text>
                       <Text
                         align="center"
                         className="text-base font-medium text-center "
                       >
-                        {item.category}
+                        {item.name}
                       </Text>
                     </Flex>
                   </div>
