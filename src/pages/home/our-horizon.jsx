@@ -92,7 +92,7 @@ export default function OurHorizon({ itemsPerSlide = 4 }) {
   return (
     <Box>
       <Container>
-        <Flex gap="4" direction="column">
+        <Flex gap="4" direction="column" overflow='auto'>
           <Flex direction="column" justify="center" align="center">
             <Text size="2" className="text-primary" align="right">
               TestiMonial
@@ -110,7 +110,7 @@ export default function OurHorizon({ itemsPerSlide = 4 }) {
                 <Card className="bg-skyblue">
                   <Flex direction="column" gap="6" p={"1"}>
                     <Text size="3">
-                     {item.comment}
+                      {item.comment}
                     </Text>
                     <Flex gap="4" align="center">
                       <Avatar
