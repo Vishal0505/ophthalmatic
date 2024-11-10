@@ -5,7 +5,7 @@ import Container from "../../components/ui/container";
 
 export default function Animation() {
   return (
-    <Container className="h-full">
+    <Container className="h-full sm:p-0 p-4">
       <Box
         className="px-12 py-20 sm:px-24 sm:py-28 bg-cover bg-center rounded-[50px]"
         style={{ backgroundImage: `url(${animation})` }}

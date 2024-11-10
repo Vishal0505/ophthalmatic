@@ -1,5 +1,5 @@
 import { Box, Button, Card, Flex, Separator, Text } from "@radix-ui/themes";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import about_us from '../../assets/about/about_us.jpg';
 import founder_1 from "../../assets/about/founder_1.png";
 import mission from "../../assets/about/mission.png";
@@ -51,14 +51,14 @@ export default function AboutUs() {
             <Container >
                 <Flex direction='column' gap='8'>
                     <Flex align="center" justify="center" className={`flex-col sm:flex-row ${isAboutPage && "mt-12"}`} gap="7">
-                        <Flex className="flex-1">
+                        <Flex className="flex-1 sm:p-0 p-4">
                             <img
                                 src={about_us}
                                 alt="About Us"
                                 className="w-full h-auto"
                             />
                         </Flex>
-                        <Flex className="flex-1 gap-5 " direction="column">
+                        <Flex className="flex-1 gap-5 sm:p-0 p-4" direction="column">
                             <Flex className="justify-center">
                                 <Text className="text-primary text-base font-medium text-center">
                                     About Us
@@ -81,21 +81,26 @@ export default function AboutUs() {
                                         after-sales support, and valuable technical advice.
                                     </Text>
                                 </Flex>
-                                <Flex className="justify-center">
-                                    <Button
-                                        variant="outline"
-                                        size="4"
-                                        radius="full"
-                                        className="!text-primary !border-primary hover:!bg-footerbg hover:!text-textWhite"
-                                    >
-                                        View More
-                                    </Button>
-                                </Flex>
+                                {!isAboutPage && (
+                                    <Flex className="justify-center">
+                                        <Button
+                                            variant="outline"
+                                            size="4"
+                                            radius="full"
+                                            className="!text-primary !border-primary hover:!bg-footerbg hover:!text-textWhite"
+                                        >
+                                            <Link to='about-us'>
+                                                View More
+                                            </Link>
+                                        </Button>
+                                    </Flex>
+                                )}
                             </Flex>
                         </Flex>
                     </Flex>
                     {isAboutPage && (
                         <>
+                            {/* founder  */}
                             <Flex direction='column' className=""
                                 style={{
                                     background: `url(${aboutVector}), linear-gradient(278.64deg, #284694 0.02%, #0D1B2A 99.98%)`,
@@ -131,6 +136,7 @@ export default function AboutUs() {
                                 </Flex>
                             </Flex>
 
+                            {/* our horizon  */}
                             <Flex direction='column' justify='center' align='center' gap='8'>
                                 <Flex direction='column' justify='center' align='center' gap='2'>
                                     <Text size="2" className="text-primary">
@@ -140,7 +146,7 @@ export default function AboutUs() {
                                         Exploring Boundless Possibilities
                                     </Text>
                                 </Flex>
-                                <Flex justify='between' className="w-full">
+                                <Flex justify='between' className="w-full" overflow='auto'>
                                     <img
                                         src={educationIcon}
                                         alt="About Us"
@@ -163,8 +169,9 @@ export default function AboutUs() {
                                     />
                                 </Flex>
                             </Flex>
-                            <Flex direction="column" gap="8" className="bg-skyblue rounded-[20px] p-12">
-                                <Flex direction='column' justify='center' align='center' gap='2'>
+                            {/* our direction   */}
+                            <Flex direction="column" gap="8" className="bg-skyblue rounded-[20px] p-6 sm:p-12">
+                                <Flex direction="column" justify="center" align="center" gap="2">
                                     <Text size="2" className="text-primary">
                                         Our Direction and Dedication
                                     </Text>
@@ -172,15 +179,15 @@ export default function AboutUs() {
                                         Focused on Purpose, Driven by Passion
                                     </Text>
                                 </Flex>
-                                <Flex width='100%' justify='center'>
-                                    <Flex gap='9' width='60%'>
-                                        <Card className="!p-5">
-                                            <Flex direction='column' gap='4'>
-                                                <Flex justify='center'>
+                                <Flex width="100%" justify="center">
+                                    <Flex className="w-full sm:w-3/5" gap="6" justify="center" direction="!column sm:row">
+                                        <Card className="!p-5 w-full">
+                                            <Flex direction="column" gap="4">
+                                                <Flex justify="center">
                                                     <img
                                                         src={mission}
-                                                        alt="About Us"
-                                                        className="w-auto h-auto"
+                                                        alt="Mission"
+                                                        className="w-auto h-auto max-w-full"
                                                     />
                                                 </Flex>
                                                 <Text as="div" size="5" className="font-medium w-full text-center">
@@ -192,13 +199,13 @@ export default function AboutUs() {
                                                 </Text>
                                             </Flex>
                                         </Card>
-                                        <Card className="!p-5">
-                                            <Flex direction='column' gap='4'>
-                                                <Flex justify='center'>
+                                        <Card className="!p-5 w-full">
+                                            <Flex direction="column" gap="4">
+                                                <Flex justify="center">
                                                     <img
                                                         src={vision}
-                                                        alt="About Us"
-                                                        className="w-auto h-auto"
+                                                        alt="Vision"
+                                                        className="w-auto h-auto max-w-full"
                                                     />
                                                 </Flex>
                                                 <Text as="div" size="5" className="font-medium w-full text-center">
@@ -213,8 +220,9 @@ export default function AboutUs() {
                                     </Flex>
                                 </Flex>
                             </Flex>
+                            {/* our value    */}
                             <Flex direction="column" gap="8" className="mb-12">
-                                <Flex direction='column' justify='center' align='center' gap='2'>
+                                <Flex direction="column" justify="center" align="center" gap="2">
                                     <Text size="2" className="text-primary">
                                         Our Value
                                     </Text>
@@ -222,49 +230,57 @@ export default function AboutUs() {
                                         Building a Legacy Through Our Values
                                     </Text>
                                 </Flex>
-                                <Flex direction='column' gap='8'>
-                                    <Flex justify='between' className="w-full px-28">
+                                <Flex direction="column" gap="8">
+                                    <Flex
+                                        justify="between"
+                                        className="w-full px-4 sm:px-28"
+                                        wrap="wrap"
+                                    >
                                         <img
                                             src={respect}
-                                            alt="About Us"
-                                            className="h-auto"
+                                            alt="Respect"
+                                            className="h-auto w-1/4 sm:w-auto mb-4 sm:mb-0"
                                         />
                                         <img
                                             src={integrity}
-                                            alt="About Us"
-                                            className="h-auto"
+                                            alt="Integrity"
+                                            className="h-auto w-1/4 sm:w-auto mb-4 sm:mb-0"
                                         />
                                         <img
                                             src={compassion}
-                                            alt="About Us"
-                                            className="h-auto"
+                                            alt="Compassion"
+                                            className="h-auto w-1/4 sm:w-auto mb-4 sm:mb-0"
                                         />
                                         <img
                                             src={cure}
-                                            alt="About Us"
-                                            className="h-auto"
+                                            alt="Cure"
+                                            className="h-auto w-1/4 sm:w-auto mb-4 sm:mb-0"
                                         />
                                     </Flex>
-                                    <Flex justify='between' className="w-full px-28" >
+                                    <Flex
+                                        justify="between"
+                                        className="w-full px-4 sm:px-28"
+                                        wrap="wrap"
+                                    >
                                         <img
                                             src={trust}
-                                            alt="About Us"
-                                            className="h-auto"
+                                            alt="Trust"
+                                            className="h-auto w-1/4 sm:w-auto mb-4 sm:mb-0"
                                         />
                                         <img
                                             src={teamwork}
-                                            alt="About Us"
-                                            className="h-auto"
+                                            alt="Teamwork"
+                                            className="h-auto w-1/4 sm:w-auto mb-4 sm:mb-0"
                                         />
                                         <img
                                             src={innovation}
-                                            alt="About Us"
-                                            className="h-auto"
+                                            alt="Innovation"
+                                            className="h-auto w-1/4 sm:w-auto mb-4 sm:mb-0"
                                         />
                                         <img
                                             src={education}
-                                            alt="About Us"
-                                            className="h-auto"
+                                            alt="Education"
+                                            className="h-auto w-1/4 sm:w-auto mb-4 sm:mb-0"
                                         />
                                     </Flex>
                                 </Flex>
