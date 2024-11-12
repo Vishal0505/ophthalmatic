@@ -45,40 +45,36 @@ const images = [
 export default function Certificates() {
   return (
     <React.Fragment>
-    
-    {/* <Box className="relative inset-0 py-16 bg-gradient-to-b from-indigo-300 via-purple-300 to-blue-300 "> */}
-      {/* <BackgroundImage imageUrl={bgimg} opacity={0.7} /> */}
-      <Box className=" max-w-full mx-auto text-center py-6">
-      <Flex direction="column" justify="center" align="center">
-            <Text size="2" className="text-primary" align="right">
+      <Box className=" max-w-full mx-auto text-center py-12">
+        <Flex direction="column" justify="center" align="center">
+          <Text size="2" className="text-primary">
             Trusted & Certified
-            </Text>
-            <Text size="4" weight="medium">
+          </Text>
+          <Text weight="medium" className="text-black text-xl sm:text-3xl">
             Recognized for quality and industry excellence.
-            </Text>
+          </Text>
+        </Flex>
+        <Flex className="overflow-hidden w-full h-auto">
+          <Flex className="flex w-max animate-slide gap-8 py-4">
+            {images.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt={`Sliding Image ${index}`}
+                className="w-full !h-[120px] object-cover"
+              />
+            ))}
+            {images.map((image, index) => (
+              <img
+                key={index + images.length}
+                src={image}
+                alt={`Sliding Image ${index}`}
+                className="w-full !h-[120px] object-cover"
+              />
+            ))}
           </Flex>
-      <div className="overflow-hidden w-full h-auto ">
-        <div className="flex w-max animate-slide gap-4 py-4">
-          {images.map((image, index) => (
-            <img
-              key={index}
-              src={image}
-              alt={`Sliding Image ${index}`}
-              className="w-full h-28 sm:h-32 object-cover mr-4"
-            />
-          ))}
-          {images.map((image, index) => (
-            <img
-              key={index + images.length}
-              src={image}
-              alt={`Sliding Image ${index}`}
-              className="w-full h-28 sm:h-32 object-cover mr-4"
-            />
-          ))}
-        </div>
-      </div>
-    </Box>
-    {/* </Box> */}
+        </Flex>
+      </Box>
     </React.Fragment>
   );
 }
