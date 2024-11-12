@@ -11,6 +11,12 @@
     --product-bg: #f6f6f6;
 }
 
+/* Scope styles only to cards within the .custom-card-container */
+.custom-card-container .rt-Card:where(.rt-variant-surface) {
+    --card-border-width: 0;
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -12,7 +12,7 @@ import Container from "../../components/ui/container";
 export default function HaveQuestion() {
   return (
     <>
-      <Flex className="bg-skyblue sm:p-0 p-4" justify='center'>
+      <Flex className="bg-skyblue" justify='center'>
         <Container className="w-full">
           <Box className="py-10 sm:py-12">
             <Flex className="justify-center gap-4  flex-col sm:flex-row ">

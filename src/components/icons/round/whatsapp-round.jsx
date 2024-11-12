@@ -1,6 +1,6 @@
 import { Box } from "@radix-ui/themes";
 
-export default function Whatsapp() {
+export default function WhatsappRound() {
     return (
         <Box>
             <svg

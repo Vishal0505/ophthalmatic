@@ -27,7 +27,7 @@ export default function Header() {
     <>
       <Box className='bg-primary'>
         <Container>
-          <Flex justify='end' gap='8' className=' text-textWhite py-2 container text-base font-medium'>
+          <Flex justify='end' gap='8' className=' text-textWhite py-2 container text-base font-medium !hidden md:!flex'>
             <a href='mailto:export@gadhiyagroup.com'>
               <Flex align="center" gap="2">
                 <Email />
@@ -45,7 +45,7 @@ export default function Header() {
       </Box>
       <Box className='sticky top-0 z-50 text-textBlack text-base font-medium'>
         <header className="w-full bg-white shadow-md">
-          <Container className='px-4 sm:px-0'>
+          <Container >
             <Flex align="center" justify="between" className='py-7'>
               <Box className="text-2xl font-bold">
                 <NavLink to="/" activeClassName="text-gray-500">
