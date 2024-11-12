@@ -18,34 +18,34 @@ export default function Footer() {
           <Flex direction="column">
             {/*  contact section   */}
             <Flex className="text-white flex-col sm:flex-row py-8 gap-8" justify='between'>
-              <Flex className="w-full sm:w-3/5" gap='5'>
-                <Flex gap="3" align="center" justify="start" sm="justify-center" className="flex-col md:flex-row w-full" >
+              <Flex className="w-full sm:w-3/5 flex-col sm:flex-row" gap='5'>
+                <Flex gap="4" justify="start" sm="justify-center" className="flex-row md:flex-col lg:flex-row w-full items-center md:items-start lg:items-center" >
                   <FooterPhone />
-                  <Flex direction="column" className="items-center md:items-start">
-                    <Text className="text-white text-lg text-center sm:text-start font-medium">
+                  <Flex direction="column" className="items-start md:items-start">
+                    <Text className="text-white text-lg sm:text-start font-medium">
                       Contact
                     </Text>
-                    <a className="text-sm text-center sm:text-start" href='tel:+918140259610'>
+                    <a className="text-sm sm:text-start" href='tel:+918140259610'>
                       +91 8140259610
                     </a>
                   </Flex>
                 </Flex>
-                <Flex gap="3" align="center" justify="start" sm="justify-center" className="flex-col md:flex-row w-full">
+                <Flex gap="4" justify="start" sm="justify-center" className="flex-row md:flex-col lg:flex-row w-full items-center md:items-start lg:items-center">
                   <FooterEmail />
-                  <Flex direction="column" className="items-center md:items-start">
-                    <Text className="text-white text-lg text-center md:text-start font-medium">
+                  <Flex direction="column" className=" md:items-start">
+                    <Text className="text-white text-lg md:text-start font-medium">
                       Mail
                     </Text>
-                    <a className="text-sm text-center sm:text-start" href='mailto:export@gadhiyagroup.com'>
+                    <a className="text-sm sm:text-start" href='mailto:export@gadhiyagroup.com'>
                       <span>export@gadhiyagroup.com</span>
                     </a>
                   </Flex>
                 </Flex>
               </Flex>
               <Flex className="w-full sm:w-2/5">
-                <Flex gap="3" align="center" sm="justify-start" className="flex-col md:flex-row ps-0 lg:ps-[90px]">
+                <Flex gap="4" sm="justify-start" className=" flex-row md:flex-col lg:flex-row ps-0 lg:ps-[90px] items-center md:items-start lg:items-center">
                   <FooterAddress />
-                  <Flex direction="column" className="items-center md:items-start text-center md:text-start">
+                  <Flex direction="column" className=" md:items-start md:text-start">
                     <Text className="text-white text-lg font-medium">
                       Address
                     </Text>
@@ -71,8 +71,8 @@ export default function Footer() {
                 {/* quick links section   */}
                 <Flex className="!justify-start sm:!justify-center px-0 sm:px-2">
                   <Flex className="col-span-1 lg:col-span-2  !justify-start sm:!justify-center" >
-                    <Flex direction="column" gap="2" className="text-start" >
-                      <Text as="h4" className="text-lg font-bold text-white mb-2 sm:mb-4" >
+                    <Flex direction="column" gap="4" className="text-start" >
+                      <Text as="h4" className="text-lg font-bold text-white mb-2" >
                         Quick Links
                       </Text>
                       <NavLink to="/" className="text-white hover:underline">
@@ -93,8 +93,8 @@ export default function Footer() {
                 {/* our products section  */}
                 <Flex className="!justify-start sm:!justify-center px-0 sm:px-2">
                   <Flex className="col-span-1 lg:col-span-2  !justify-start sm:!justify-center" >
-                    <Flex direction="column" gap="2" className="text-start">
-                      <Text as="h4" className="text-lg font-bold text-white mb-2 sm:mb-4" >
+                    <Flex direction="column" gap="4" className="text-start">
+                      <Text as="h4" className="text-lg font-bold text-white mb-2" >
                         Our Products{" "}
                       </Text>
                       <NavLink to="/csr-activity" className="text-white hover:underline">
@@ -118,9 +118,9 @@ export default function Footer() {
                 {/* service and social section  */}
                 <Flex className="!justify-start sm:!justify-center px-0 sm:px-2">
                   <Flex className="col-span-1 lg:col-span-2  !justify-start sm:!justify-center" >
-                    <Flex direction='column' gap='5' className="text-start">
-                      <Flex direction="column" gap="2">
-                        <Text as="h4" className="text-lg font-bold text-white mb-2 sm:mb-4" >
+                    <Flex direction='column' justify='between' className="text-start">
+                      <Flex direction="column" gap="4">
+                        <Text as="h4" className="text-lg font-bold text-white mb-2" >
                           Services
                         </Text>
                         <NavLink to="/csr-activity" className="text-white hover:underline" >
@@ -131,10 +131,10 @@ export default function Footer() {
                         </NavLink>
                       </Flex>
                       <Flex direction='column'>
-                        <Text as="h4" className="text-lg font-bold text-white" >
+                        <Text as="h4" className="text-lg font-bold text-white mb-2" >
                           Social
                         </Text>
-                        <Flex gap="5" py="4" className="!justify-center md:!justify-start">
+                        <Flex gap="5" pt="4" className="!justify-center md:!justify-start">
                           <Box className="cursor-pointer">
                             <Instagram />
                           </Box>
