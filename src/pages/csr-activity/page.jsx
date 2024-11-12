@@ -8,21 +8,32 @@ import csr6 from "../../assets/csr/csr6.jpg";
 import csr7 from "../../assets/csr/csr7.jpg";
 import csr8 from "../../assets/csr/csr8.jpg";
 import csr9 from "../../assets/csr/csr9.jpg";
+import Container from "../../components/ui/container";
+import { NavLink } from "react-router-dom";
 
-import BackgroundImage from "../../components/ui/background-image";
-import bgimg from "../../assets/bg/bgimg.jpg";
 
 export default function CsrActivity() {
     return (
-        <Box className="relative bg-gradient-to-b from-blue-300 via-purple-300 to-indigo-300 inset-0">
-            <BackgroundImage imageUrl={bgimg} opacity={0.7} />
-            <Section className="relative max-w-7xl mx-auto px-4 z-10">
-                <Heading
-                    as="h2"
-                    className="text-center text-6xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-800 to-purple-800"
-                >
+        <Flex direction='column'>
+            <Flex direction='column' py='9' style={{ background: "linear-gradient(91.45deg, rgba(40, 70, 148, 0.14) -1.47%, rgba(255, 255, 255, 0.14) 23.84%, rgba(40, 70, 148, 0.14) 49.14%, rgba(255, 255, 255, 0.14) 74.45%, rgba(40, 70, 148, 0.14) 99.76%)" }}>
+                <Flex gap='3' align='center' justify='center' width='100%'>
+                    <Text className="text-5xl font-semibold text-primary">Corporate </Text>
+                    <Text className="text-5xl font-semibold">Social Responsibility</Text>
+                </Flex>
+                <Flex justify="center" gap='2' className="text-sm font-medium">
+                    <NavLink to="/" className='text-textGray'>
+                        Home
+                    </NavLink>
+                    <Text className='text-textGray'>/</Text>
+                    <NavLink to="/csr-activity" className={({ isActive }) => isActive && 'text-primary'}>
+                        CSR
+                    </NavLink>
+                </Flex>
+            </Flex>
+            <Container>
+                {/* <Heading as="h2" className="text-center text-6xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-800 to-purple-800">
                     Corporate Social Responsibility (CSR)
-                </Heading>
+                </Heading> */}
                 <Text className="text-lg text-center mb-8 text-gray-800 leading-relaxed max-w-3xl mx-auto">
                     At Gadhiya Foundation, we believe that true progress begins with the health and happiness of our community.
                     Our Free Eye Check-Up Camp embodies our dedication to community development, sustainable progress,
@@ -102,9 +113,7 @@ export default function CsrActivity() {
                         </Flex>
                     </Box>
                 </Grid>
-            </Section>
-
-            <Box className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-l from-pink-300 to-transparent rounded-full transform -translate-x-1/2 translate-y-1/2"></Box>
-        </Box>
+            </Container>
+        </Flex>
     );
 }

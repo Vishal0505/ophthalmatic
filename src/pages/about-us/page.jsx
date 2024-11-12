@@ -280,7 +280,7 @@ export default function AboutUs() {
                     <Box >
                         <Certificates />
                     </Box>
-                    <Box className="mb-12">
+                    <Box >
                         <HaveQuestion />
                     </Box>
                 </>
