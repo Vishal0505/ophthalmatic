@@ -16,6 +16,14 @@
     --card-border-width: 0;
 }
 
+.have-question .rt-Card:where(.rt-variant-surface) {
+    --card-border-radius: 30px;
+}
+
+.contact-cards .rt-Card:where(.rt-variant-surface) {
+    --card-border-radius: 20px;
+}
+
 
 @tailwind base;
 @tailwind components;

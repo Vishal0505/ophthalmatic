@@ -45,7 +45,7 @@ const images = [
 export default function Certificates() {
   return (
     <React.Fragment>
-      <Box className=" max-w-full mx-auto text-center py-12">
+      <Box className=" max-w-full mx-auto text-center pb-12">
         <Flex direction="column" justify="center" align="center">
           <Text size="2" className="text-primary">
             Trusted & Certified

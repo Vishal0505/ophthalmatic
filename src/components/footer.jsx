@@ -126,7 +126,7 @@ export default function Footer() {
                         <NavLink to="/csr-activity" className="text-white hover:underline" >
                           CSR
                         </NavLink>
-                        <NavLink to="/csr-activity" className="text-white hover:underline" >
+                        <NavLink to="/ware-house" className="text-white hover:underline" >
                           workshop
                         </NavLink>
                       </Flex>
