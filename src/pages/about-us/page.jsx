@@ -280,7 +280,7 @@ export default function AboutUs() {
                     <Box >
                         <Certificates />
                     </Box>
-                    <Box >
+                    <Box className="bg-skyblue py-12">
                         <HaveQuestion />
                     </Box>
                 </>

@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  Card,
   Flex,
   Select,
   Text,
@@ -12,22 +13,22 @@ import Container from "../../components/ui/container";
 export default function HaveQuestion() {
   return (
     <>
-      <Flex className="bg-skyblue" justify='center'>
+      <Flex className="" justify='center'>
         <Container className="w-full">
-          <Box className="py-10 sm:py-12">
-            <Flex className="justify-center gap-4  flex-col sm:flex-row ">
-              <Box className="flex-1 flex justify-end text-start flex-col sm:flex-row ">
-                <Flex className="justify-end flex-col py-6">
-                  <Text size="2" className="text-primary text-start">
-                    Have Question ?
-                  </Text>
-                  <Text className="text-2xl font-medium">
-                    Reach out to us for expert advice and assistance.
-                  </Text>
-                </Flex>
-              </Box>
-              <Box className="flex-1">
-                <Flex className="rounded-xl bg-white flex-col p-4 gap-3">
+          <Flex className="justify-center gap-10 flex-col lg:flex-row ">
+            <Flex className="justify-end text-start flex-col sm:flex-row ">
+              <Flex className="justify-end flex-col py-6 pe-4">
+                <Text size="2" className="text-primary text-start">
+                  Have Question ?
+                </Text>
+                <Text className="text-[40px] font-semibold">
+                  Reach out to us for expert <br /> advice and assistance.
+                </Text>
+              </Flex>
+            </Flex>
+            <Flex className="flex-1 have-question">
+              <Card variant="surface" className="bg-white !p-[30px] w-full">
+                <Flex className="flex-col gap-5">
                   <Text>
                     Fill out the form below, and we’ll get back to you as soon as
                     possible!
@@ -92,8 +93,8 @@ export default function HaveQuestion() {
                       </Select.Content>
                     </Select.Root>
                   </Flex>
-                  <TextArea radius="full" size="3" placeholder="Message" />
-                  <Flex className="w-11 justify-end items-end" >
+                  <TextArea radius="full" placeholder="Message" />
+                  <Flex justify='end' align='center'  >
                     <Button
                       variant="solid"
                       size="3"
@@ -104,9 +105,9 @@ export default function HaveQuestion() {
                     </Button>
                   </Flex>
                 </Flex>
-              </Box>
+              </Card>
             </Flex>
-          </Box>
+          </Flex>
         </Container>
       </Flex>
     </>

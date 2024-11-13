@@ -1,4 +1,4 @@
-import { Flex } from "@radix-ui/themes";
+import { Box, Flex } from "@radix-ui/themes";
 import AboutUs from "../about-us/page";
 import Animation from "./animation";
 import Certificates from "./certificates";
@@ -14,10 +14,12 @@ export default function HomePage() {
       <Herosection />
       <AboutUs />
       <WhyChooseUs />
-      <OurProducts title={"Our Products"} subTitles={"Explore Our Premium Products"}/>
+      <OurProducts title={"Our Products"} subTitles={"Explore Our Premium Products"} />
       <Animation />
       <OurHorizon />
-      <HaveQuestion  />
+      <Box className="bg-skyblue py-12">
+        <HaveQuestion />
+      </Box>
       <Certificates />
     </Flex>
   )

@@ -10,8 +10,8 @@ export default function SpecificProductPage() {
   const navigate = useNavigate();
   const product = location.state?.product;
 
-  console.log("product",product);
-  
+  console.log("product", product);
+
   return (
     <>
       <Box className="bg-productbackground">
@@ -104,7 +104,7 @@ export default function SpecificProductPage() {
             </Box>
           </div>
         </Container>
-        <Box className=" bg-slate-700">
+        <Box className="bg-skyblue py-12">
           <HaveQuestion />
         </Box>
       </Box>
