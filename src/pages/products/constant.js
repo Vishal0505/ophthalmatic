@@ -1,7 +1,6 @@
 import Prod1 from "../../assets/products/prem-1.png";
 import Prod2 from "../../assets/products/prem-2.png";
 import Prod3 from "../../assets/products/prem-3.png";
-import Prod4 from "../../assets/products/prem-4.png";
 
 export const Products = [
   {

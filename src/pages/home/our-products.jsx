@@ -1,13 +1,13 @@
 import { Box, Flex, Text } from "@radix-ui/themes";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import Prod1 from "../../assets/products/prem-1.png";
 import Prod2 from "../../assets/products/prem-2.png";
 import Prod3 from "../../assets/products/prem-3.png";
 import Prod4 from "../../assets/products/prem-4.png";
-import Container from "../../components/ui/container";
 import LeftArrow from "../../components/icons/round/left-arrow";
 import RightArrow from "../../components/icons/round/right-arrow";
+import Container from "../../components/ui/container";
 const products = [
   {
     id: 1,
@@ -59,26 +59,29 @@ const products = [
 ];
 
 export default function OurProducts({ title, subTitles }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerSlide, setItemsPerSlide] = useState(4);
-  // let itemsPerSlide = 4
-  // let itemsPerSlide = useBreakpointValue({ base: 1, md: 2, lg: 4 });
+  console.log("currentIndex", currentIndex);
+
+  const updateItemsPerSlide = () => {
+    if (window.innerWidth <= 768) {
+      setItemsPerSlide(1);
+    } else if (window.innerWidth <= 1024) {
+      setItemsPerSlide(2);
+    } else {
+      setItemsPerSlide(4);
+    }
+  };
 
   useEffect(() => {
-    const updateItemsPerSlide = () => {
-      if (window.innerWidth <= 768) {
-        setItemsPerSlide(1);
-      } else if (window.innerWidth <= 1024) {
-        setItemsPerSlide(2);
-      } else {
-        setItemsPerSlide(4);
-      }
-    };
     updateItemsPerSlide();
-    window.addEventListener('resize', updateItemsPerSlide);
-    return () => window.removeEventListener('resize', updateItemsPerSlide);
+    window.addEventListener("resize", updateItemsPerSlide);
+    return () => window.removeEventListener("resize", updateItemsPerSlide);
   }, []);
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [itemsPerSlide]);
 
 
   const totalSlides = Math.ceil(products.length / itemsPerSlide);
@@ -101,7 +104,6 @@ export default function OurProducts({ title, subTitles }) {
   return (
     <>
       <Container className="w-full">
-        {/* <Slider items={items} itemsPerSlide={4} /> */}
         <Flex direction='column' className="w-full overflow-hidden" gap='7'>
           <Flex justify="between">
             <Flex direction="column" align="start">
@@ -113,13 +115,7 @@ export default function OurProducts({ title, subTitles }) {
               </Text>
             </Flex>
             <Flex gap="4">
-              {/* <Box className="cursor-pointer" onClick={handlePrev}>
-                <LeftArrow />
-              </Box>
-              <Box className="cursor-pointer" onClick={handleNext}>
-                <RightArrow />
-              </Box> */}
-              <Box className={`cursor-pointer ${currentIndex === 0 && 'opacity-50 pointer-events-none'}`} onClick={handlePrev}>
+              <Box className={`cursor-pointer ${currentIndex === 0 && 'opacity-50 pointer-events-none'}`} onClick={handlePrev} aria-label="Previous slide">
                 <LeftArrow />
               </Box>
               <Box className={`cursor-pointer ${currentIndex === totalSlides - 1 && 'opacity-50 pointer-events-none'}`} onClick={handleNext}>
@@ -128,11 +124,11 @@ export default function OurProducts({ title, subTitles }) {
 
             </Flex>
           </Flex>
-          <Flex gap='5'>
+          <Flex gap='5' style={{ gridTemplateColumns: `repeat(${itemsPerSlide}, 1fr)` }}>
             {currentItems.map((item) => (
               <div key={item.id} className="flex-1">
                 <Flex direction='column' className="p-4 bg-white rounded-md border border-gray-300">
-                  <img src={item.imageUrl} alt={item.name} className="h-56 object-contain rounded-md mb-4" />
+                  <img src={item.imageUrl} alt={item.name} className="h-56 object-contain rounded-md mb-4" loading="lazy" />
                   <Flex justify="center" direction="column">
                     <Text align="center" className="text-base font-medium text-center "  >
                       {item.name}
@@ -150,3 +146,9 @@ export default function OurProducts({ title, subTitles }) {
     </>
   );
 }
+
+
+OurProducts.propTypes = {
+  title: PropTypes.string.isRequired,    // title should be a string and is required
+  subTitles: PropTypes.string.isRequired // subTitles should be a string and is required
+};

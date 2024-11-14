@@ -1,5 +1,5 @@
 import { Box, Button, Card, Flex, Separator, Text } from "@radix-ui/themes";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import about_us from '../../assets/about/about_us.jpg';
 import compassion from "../../assets/about/compassion.png";
 import cure from "../../assets/about/cure.png";
@@ -19,6 +19,7 @@ import hospitalIcon from "../../assets/horizon/hospital.png";
 import wellnessIcon from "../../assets/horizon/wellness.png";
 import LinkedinRound from "../../components/icons/round/linkedin-round";
 import WhatsappRound from "../../components/icons/round/whatsapp-round";
+import Breadcrumb from "../../components/ui/breadcrumb";
 import Container from "../../components/ui/container";
 import Certificates from "../home/certificates";
 import HaveQuestion from "../home/have-question";
@@ -43,21 +44,7 @@ export default function AboutUs() {
     return (
         <Flex direction='column'>
             {isAboutPage && (
-                <Flex direction='column' py='9' style={{ background: "linear-gradient(91.45deg, rgba(40, 70, 148, 0.14) -1.47%, rgba(255, 255, 255, 0.14) 23.84%, rgba(40, 70, 148, 0.14) 49.14%, rgba(255, 255, 255, 0.14) 74.45%, rgba(40, 70, 148, 0.14) 99.76%)" }}>
-                    <Flex gap='3' align='center' justify='center' width='100%'>
-                        <Text className="text-5xl font-semibold text-primary">About</Text>
-                        <Text className="text-5xl font-semibold">US</Text>
-                    </Flex>
-                    <Flex justify="center" gap='2' className="text-sm font-medium">
-                        <NavLink to="/" className='text-textGray'>
-                            Home
-                        </NavLink>
-                        <Text className='text-textGray'>/</Text>
-                        <NavLink to="/about-us" className={({ isActive }) => isActive && 'text-primary'}>
-                            About US
-                        </NavLink>
-                    </Flex>
-                </Flex>
+                <Breadcrumb title="About" secondaryTitle="US" path="about-us" label="About Us" />
             )}
             <Container >
                 <Flex direction='column' gap='8'>

@@ -1,31 +1,17 @@
 import { Card, Flex, Text } from "@radix-ui/themes";
-import { NavLink } from "react-router-dom";
+import map from "../../assets/contact/map.png";
 import ContactAddress from "../../components/icons/contact-address";
 import ContactCall from "../../components/icons/contact-call";
 import ContactMail from "../../components/icons/contact-mail";
+import Breadcrumb from "../../components/ui/breadcrumb";
 import Container from "../../components/ui/container";
 import HaveQuestion from "../home/have-question";
-import map from "../../assets/contact/map.png"
 
 export default function ContactPage() {
 
   return (
     <Flex direction='column' gap='8'>
-      <Flex direction='column' py='9' style={{ background: "linear-gradient(91.45deg, rgba(40, 70, 148, 0.14) -1.47%, rgba(255, 255, 255, 0.14) 23.84%, rgba(40, 70, 148, 0.14) 49.14%, rgba(255, 255, 255, 0.14) 74.45%, rgba(40, 70, 148, 0.14) 99.76%)" }}>
-        <Flex gap='3' align='center' justify='center' width='100%'>
-          <Text className="text-5xl font-semibold text-primary">Contact</Text>
-          <Text className="text-5xl font-semibold">US</Text>
-        </Flex>
-        <Flex justify="center" gap='2' className="text-sm font-medium">
-          <NavLink to="/" className='text-textGray'>
-            Home
-          </NavLink>
-          <Text className='text-textGray'>/</Text>
-          <NavLink to="/contact" className={({ isActive }) => isActive && 'text-primary'}>
-            Contact Us
-          </NavLink>
-        </Flex>
-      </Flex>
+      <Breadcrumb title="Contact" secondaryTitle="US" path="contact" label="Contact Us" />
       <Flex gap='8' direction='column' width='100%'>
         <Container className="w-full">
           <Flex className="flex-col md:flex-row w-full contact-cards" gap='8'>

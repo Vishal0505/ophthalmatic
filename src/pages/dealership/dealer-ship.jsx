@@ -1,27 +1,14 @@
 import { Box, Flex, Text } from "@radix-ui/themes";
-import { NavLink } from "react-router-dom";
+import Breadcrumb from "../../components/ui/breadcrumb";
 import Container from "../../components/ui/container";
+import HaveQuestion from "../home/have-question";
 import OurProducts from "../home/our-products";
 import { applications, benefits, partners } from "./constant";
-import HaveQuestion from "../home/have-question";
 
 export default function DealerShip() {
     return (
         <Flex direction='column' gap='8'>
-            <Flex direction='column' py='9' style={{ background: "linear-gradient(91.45deg, rgba(40, 70, 148, 0.14) -1.47%, rgba(255, 255, 255, 0.14) 23.84%, rgba(40, 70, 148, 0.14) 49.14%, rgba(255, 255, 255, 0.14) 74.45%, rgba(40, 70, 148, 0.14) 99.76%)" }}>
-                <Flex gap='3' align='center' justify='center' width='100%'>
-                    <Text className="text-5xl font-semibold text-primary">Dealership</Text>
-                </Flex>
-                <Flex justify="center" gap='2' className="text-sm font-medium">
-                    <NavLink to="/" className='text-textGray'>
-                        Home
-                    </NavLink>
-                    <Text className='text-textGray'>/</Text>
-                    <NavLink to="/dealership" className={({ isActive }) => isActive && 'text-primary'}>
-                        Dealership
-                    </NavLink>
-                </Flex>
-            </Flex>
+            <Breadcrumb title="Dealership" secondaryTitle="" path="dealership" label="Dealership" />
             <Flex gap='8' direction='column' width='100%'>
                 <Container className="w-full">
                     {/* Grow with Us  */}

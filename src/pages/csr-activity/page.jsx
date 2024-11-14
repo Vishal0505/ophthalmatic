@@ -1,5 +1,4 @@
 import { Box, Flex, Grid, Text } from "@radix-ui/themes";
-import { NavLink } from "react-router-dom";
 import csr1 from "../../assets/csr/csr1.jpg";
 import csr2 from "../../assets/csr/csr2.jpg";
 import csr3 from "../../assets/csr/csr3.jpg";
@@ -9,27 +8,14 @@ import csr6 from "../../assets/csr/csr6.jpg";
 import csr7 from "../../assets/csr/csr7.jpg";
 import csr8 from "../../assets/csr/csr8.jpg";
 import csr9 from "../../assets/csr/csr9.jpg";
+import Breadcrumb from "../../components/ui/breadcrumb";
 import Container from "../../components/ui/container";
 
 
 export default function CsrActivity() {
     return (
         <Flex direction='column'>
-            <Flex direction='column' py='9' style={{ background: "linear-gradient(91.45deg, rgba(40, 70, 148, 0.14) -1.47%, rgba(255, 255, 255, 0.14) 23.84%, rgba(40, 70, 148, 0.14) 49.14%, rgba(255, 255, 255, 0.14) 74.45%, rgba(40, 70, 148, 0.14) 99.76%)" }}>
-                <Flex gap='3' align='center' justify='center' width='100%'>
-                    <Text className="text-5xl font-semibold text-primary">Corporate </Text>
-                    <Text className="text-5xl font-semibold">Social Responsibility</Text>
-                </Flex>
-                <Flex justify="center" gap='2' className="text-sm font-medium">
-                    <NavLink to="/" className='text-textGray'>
-                        Home
-                    </NavLink>
-                    <Text className='text-textGray'>/</Text>
-                    <NavLink to="/csr-activity" className={({ isActive }) => isActive && 'text-primary'}>
-                        CSR
-                    </NavLink>
-                </Flex>
-            </Flex>
+            <Breadcrumb title="Corporate" secondaryTitle="Social Responsibility" path="csr-activity" label="CSR" />
             <Container className="my-12">
                 <Flex direction='column' gap='8'>
                     <Text className="text-lg text-center text-gray-800">
