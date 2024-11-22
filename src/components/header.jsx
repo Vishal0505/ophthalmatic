@@ -59,14 +59,7 @@ export default function Header() {
                     <Flex gap='6'>
                       {navLinks.map((link) => (
                         <NavigationMenu.Item key={link.path}>
-                          <NavLink
-                            to={link.path}
-                            className={({ isActive }) =>
-                              isActive
-                                ? 'text-primary'
-                                : 'hover:text-primary'
-                            }
-                          >
+                          <NavLink to={link.path} className={({ isActive }) => isActive ? 'text-primary' : 'hover:text-primary'}>
                             {link.name}
                           </NavLink>
                         </NavigationMenu.Item>

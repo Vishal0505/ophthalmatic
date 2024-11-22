@@ -1,7 +1,7 @@
 import { Theme } from '@radix-ui/themes';
-import './App.css'
-import HomePage from './pages/home/page'
 import '@radix-ui/themes/styles.css';
+import './App.css';
+import HomePage from './pages/home/page';
 
 
 function App() {

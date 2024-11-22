@@ -1,13 +1,11 @@
-import { Box, Card, Flex, Table, Text } from "@radix-ui/themes";
-import Prod1 from "../../assets/products/prem-1.png";
+import { Box, Card, Table, Text } from "@radix-ui/themes";
+import { useLocation } from "react-router-dom";
 import Container from "../../components/ui/container";
-import OurProducts from "../home/our-products";
 import HaveQuestion from "../home/have-question";
-import { useLocation, useNavigate } from "react-router-dom";
+import OurProducts from "../home/our-products";
 
 export default function SpecificProductPage() {
   const location = useLocation();
-  const navigate = useNavigate();
   const product = location.state?.product;
 
   console.log("product", product);

@@ -25,6 +25,16 @@
 }
 
 
+/* whatsapp */
+.whatsapp-sticky {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

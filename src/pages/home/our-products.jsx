@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from "@radix-ui/themes";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import Prod1 from "../../assets/Products/prem-1.png";
 import Prod2 from "../../assets/Products/prem-2.png";
@@ -61,28 +61,32 @@ import { useNavigate } from "react-router-dom";
 // ];
 
 export default function OurProducts({ title, subTitles }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerSlide, setItemsPerSlide] = useState(4);
   let navigate = useNavigate();
 
   // let itemsPerSlide = 4
   // let itemsPerSlide = useBreakpointValue({ base: 1, md: 2, lg: 4 });
 
+  const updateItemsPerSlide = () => {
+    if (window.innerWidth <= 768) {
+      setItemsPerSlide(1);
+    } else if (window.innerWidth <= 1024) {
+      setItemsPerSlide(2);
+    } else {
+      setItemsPerSlide(4);
+    }
+  };
+
   useEffect(() => {
-    const updateItemsPerSlide = () => {
-      if (window.innerWidth <= 768) {
-        setItemsPerSlide(1);
-      } else if (window.innerWidth <= 1024) {
-        setItemsPerSlide(2);
-      } else {
-        setItemsPerSlide(4);
-      }
-    };
     updateItemsPerSlide();
     window.addEventListener("resize", updateItemsPerSlide);
     return () => window.removeEventListener("resize", updateItemsPerSlide);
   }, []);
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [itemsPerSlide]);
 
   const totalSlides = Math.ceil(Products.length / itemsPerSlide);
 
@@ -183,3 +187,9 @@ export default function OurProducts({ title, subTitles }) {
     </>
   );
 }
+
+
+OurProducts.propTypes = {
+  title: PropTypes.string.isRequired,    // title should be a string and is required
+  subTitles: PropTypes.string.isRequired // subTitles should be a string and is required
+};

@@ -1,5 +1,4 @@
-import { Box, Flex, Grid, Text } from "@radix-ui/themes";
-import { NavLink } from "react-router-dom";
+import { Box, Flex, Grid } from "@radix-ui/themes";
 import warehouse1 from "../../assets/warehouse/warehouse1.jpg";
 import warehouse10 from "../../assets/warehouse/warehouse10.jpg";
 import warehouse2 from "../../assets/warehouse/warehouse2.jpg";
@@ -10,27 +9,14 @@ import warehouse6 from "../../assets/warehouse/warehouse6.jpg";
 import warehouse7 from "../../assets/warehouse/warehouse7.jpg";
 import warehouse8 from "../../assets/warehouse/warehouse8.jpg";
 import warehouse9 from "../../assets/warehouse/warehouse9.jpg";
+import Breadcrumb from "../../components/ui/breadcrumb";
 import Container from "../../components/ui/container";
 
 
 export default function OurWareHouse() {
     return (
         <Flex direction='column'>
-            <Flex direction='column' py='9' style={{ background: "linear-gradient(91.45deg, rgba(40, 70, 148, 0.14) -1.47%, rgba(255, 255, 255, 0.14) 23.84%, rgba(40, 70, 148, 0.14) 49.14%, rgba(255, 255, 255, 0.14) 74.45%, rgba(40, 70, 148, 0.14) 99.76%)" }}>
-                <Flex gap='3' align='center' justify='center' width='100%'>
-                    <Text className="text-5xl font-semibold text-primary">Our</Text>
-                    <Text className="text-5xl font-semibold">Warehouse</Text>
-                </Flex>
-                <Flex justify="center" gap='2' className="text-sm font-medium">
-                    <NavLink to="/" className='text-textGray'>
-                        Home
-                    </NavLink>
-                    <Text className='text-textGray'>/</Text>
-                    <NavLink to="/ware-house" className={({ isActive }) => isActive && 'text-primary'}>
-                        Our Warehouse
-                    </NavLink>
-                </Flex>
-            </Flex>
+            <Breadcrumb title="Our" secondaryTitle="Warehouse" path="ware-house" label="Our Warehouse" />
             <Container className="my-12">
                 <Grid columns="4" gap="4">
                     <Box className="col-span-3">

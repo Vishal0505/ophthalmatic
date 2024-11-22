@@ -5,8 +5,8 @@ import Certificates from "./certificates";
 import HaveQuestion from "./have-question";
 import Herosection from "./herosection";
 import OurHorizon from "./our-horizon";
-import WhyChooseUs from "./why-us";
 import OurProducts from "./our-products";
+import WhyChooseUs from "./why-us";
 
 export default function HomePage() {
   return (
