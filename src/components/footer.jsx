@@ -56,7 +56,7 @@ export default function Footer() {
                 </Flex>
               </Flex>
             </Flex>
-            <Separator size="4" color="green" />
+            <Separator size="4" color="blue" />
             <Flex className="text-white py-8 flex-col lg:flex-row gap-2 lg:gap-[100px]">
               {/* Footer logo   */}
               <Flex direction='column' className="py-8 lg:py-0" gap='4'>
@@ -154,7 +154,7 @@ export default function Footer() {
                 </Flex>
               </Flex>
             </Flex>
-            <Separator size="4" color="green" />
+            <Separator size="4" color="blue" />
             <Flex className="flex-col sm:flex-row" align="center" justify='center' py='6' >
               <Text className="text-white" size="2">
                 © Ophthalmatic 2024 All right reserved.
