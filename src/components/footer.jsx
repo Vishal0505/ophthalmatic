@@ -32,7 +32,7 @@ export default function Footer() {
                   <img src={footer_logo} alt="Logo" className="" />
                 </NavLink>
                 <Text className="text-base font-medium sm:text-start text-white" >
-                  ISO 9001 : 2015 Certified Company
+                  CE & ISO 13485 : 2016 Certified Company
                 </Text>
               </Flex>
               <Flex className="flex-1 flex-col sm:flex-row gap-8 sm:gap-0" justify='between'>
