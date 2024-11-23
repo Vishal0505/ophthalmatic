@@ -1,7 +1,7 @@
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import { Box, Flex } from '@radix-ui/themes';
 import { Menu, SquareMenu } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from "../assets/logo/logo.png";
 import Email from './icons/email';
@@ -23,6 +23,12 @@ export default function Header() {
     { path: '/contact', name: 'Contact Us' },
     { path: '/dealership', name: 'Become our dealer ' },
   ];
+  useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // Optional: Adds smooth scrolling effect
+  });
+}, []);
 
   return (
     <>

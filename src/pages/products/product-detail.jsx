@@ -17,11 +17,11 @@ export default function SpecificProductPage() {
           <div className="flex flex-col gap-6 py-6">
             <Card>
               <div className="flex flex-col sm:flex-row justify-center gap-8 sm:gap-16 px-2 sm:px-8 py-6 sm:py-6 ">
-                <div className="sm:w-1/3 flex justify-center items-center border border-red-500">
+                <div className="sm:w-1/3 flex justify-center items-center">
                   <img
                     src={product.imageUrl}
                     alt={product.name}
-                    className=" h-auto  object-cover rounded-md mb-4 border border-red-500"
+                    className=" h-auto  object-cover rounded-md mb-4"
                   />
                 </div>
 

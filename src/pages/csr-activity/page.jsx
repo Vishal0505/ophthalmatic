@@ -10,9 +10,16 @@ import csr8 from "../../assets/csr/csr8.jpg";
 import csr9 from "../../assets/csr/csr9.jpg";
 import Breadcrumb from "../../components/ui/breadcrumb";
 import Container from "../../components/ui/container";
+import { useEffect } from "react";
 
 
 export default function CsrActivity() {
+    useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // Optional: Adds smooth scrolling effect
+  });
+}, []);
     return (
         <Flex direction='column'>
             <Breadcrumb title="Corporate" secondaryTitle="Social Responsibility" path="csr-activity" label="CSR" />

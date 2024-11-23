@@ -6,9 +6,15 @@ import ContactMail from "../../components/icons/contact-mail";
 import Breadcrumb from "../../components/ui/breadcrumb";
 import Container from "../../components/ui/container";
 import HaveQuestion from "../home/have-question";
+import { useEffect } from "react";
 
 export default function ContactPage() {
-
+useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // Optional: Adds smooth scrolling effect
+  });
+}, []);
   return (
     <Flex direction='column' gap='8'>
       <Breadcrumb title="Contact" secondaryTitle="US" path="contact" label="Contact Us" />

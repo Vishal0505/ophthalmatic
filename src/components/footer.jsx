@@ -9,15 +9,130 @@ import Instagram from "./icons/instagram";
 import Facebook from "./icons/facebook";
 import Twitter from "./icons/twitter";
 import Linkedin from "./icons/linkedin";
+import { useEffect } from "react";
 
 export default function Footer() {
+  useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // Optional: Adds smooth scrolling effect
+  });
+}, []);
   return (
     <>
       <Box className="bg-footerbg">
         <Container>
           <Flex direction="column">
             {/*  contact section   */}
-            <Flex className="text-white flex-col sm:flex-row py-8 gap-8" justify='between'>
+          
+            <Flex className="text-white py-8 flex-col lg:flex-row gap-2 lg:gap-[100px]">
+              {/* Footer logo   */}
+              <Flex direction='column' className="py-8 lg:py-0" gap='4'>
+                <NavLink to="/" activeClassName="text-gray-500">
+                  <img src={footer_logo} alt="Logo" className="" />
+                </NavLink>
+                <Text className="text-base font-medium sm:text-start text-white" >
+                  ISO 9001 : 2015 Certified Company
+                </Text>
+              </Flex>
+              <Flex className="flex-1 flex-col sm:flex-row gap-8 sm:gap-0" justify='between'>
+                {/* quick links section   */}
+                <Flex className="!justify-start sm:!justify-center px-0 sm:px-2">
+                  <Flex className="col-span-1 lg:col-span-2  !justify-start sm:!justify-center" >
+                    <Flex direction="column" gap="4" className="text-start" >
+                      <Text as="h4" className="text-lg font-bold text-white mb-2" >
+                        Quick Links
+                      </Text>
+                      <NavLink to="/" className="text-white hover:underline">
+                        Home
+                      </NavLink>
+                      <NavLink to="/about-us" className="text-white hover:underline">
+                        About Us
+                      </NavLink>
+                      <NavLink to="/contact" className="text-white hover:underline">
+                        Contact Us
+                      </NavLink>
+                      <NavLink to="/dealership" className="text-white hover:underline">
+                        Become our dealer
+                      </NavLink>
+                    </Flex>
+                  </Flex>
+                </Flex>
+                {/* our products section  */}
+                <Flex className="!justify-start sm:!justify-center px-0 sm:px-2">
+                  <Flex className="col-span-1 lg:col-span-2  !justify-start sm:!justify-center" >
+                    <Flex direction="column" gap="4" className="text-start">
+                      <Text as="h4" className="text-lg font-bold text-white mb-2" >
+                        Our Products{" "}
+                      </Text>
+                      <NavLink to="/product" className="text-white hover:underline">
+                        Ophthalmic Refraction Unit
+                      </NavLink>
+                      <NavLink to="/product" className="text-white hover:underline" >
+                        Ophthalmic Opretion Table
+                      </NavLink>
+                      <NavLink to="/product" className="text-white hover:underline" >
+                        Ophthalmic Instrument Table
+                      </NavLink>
+                      <NavLink to="/product" className="text-white hover:underline" >
+                        Arm For Phoropter
+                      </NavLink>
+                      <NavLink to="/product" className="text-white hover:underline" >
+                        Surgeon’s Chair
+                      </NavLink>
+                    </Flex>
+                  </Flex>
+                </Flex>
+                {/* service and social section  */}
+                <Flex className="!justify-start sm:!justify-center px-0 sm:px-2">
+                  <Flex className="col-span-1 lg:col-span-2  !justify-start sm:!justify-center" >
+                    <Flex direction='column' justify='between' className="text-start">
+                      <Flex direction="column" gap="4">
+                        <Text as="h4" className="text-lg font-bold text-white mb-2" >
+                          Services
+                        </Text>
+                        <NavLink to="/csr-activity" className="text-white hover:underline" >
+                          CSR
+                        </NavLink>
+                        <NavLink to="/ware-house" className="text-white hover:underline" >
+                          workshop
+                        </NavLink>
+                      </Flex>
+                      <Flex direction='column'>
+                        <Text as="h4" className="text-lg font-bold text-white mb-2" >
+                          Social
+                        </Text>
+                        <Flex gap="5" pt="4" className="!justify-center md:!justify-start">
+                          <NavLink to="https://www.instagram.com/ophthalmatic/profilecard/?igsh=dDc4czBnOHZqZmls " className="text-white hover:underline" >
+                          <Box className="cursor-pointer">
+                            <Instagram />
+                          </Box>
+                          </NavLink>
+                          <NavLink to="https://www.facebook.com/share/15SQQ4QmZN/ " className="text-white hover:underline" >
+                          <Box className="cursor-pointer">
+                            <Facebook />
+                          </Box>
+                          </NavLink>
+                          <NavLink to="" className="text-white hover:underline" >
+                          <Box className="cursor-pointer">
+                            <Twitter />
+                          </Box>
+                          </NavLink>
+                          <NavLink to="https://www.linkedin.com/in/bansil-gadhiya?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " className="text-white hover:underline" >
+                          <Box className="cursor-pointer">
+                            <Linkedin />
+                          </Box>
+                          </NavLink>
+                        </Flex>
+                      </Flex>
+                    </Flex>
+                  </Flex>
+                </Flex>
+              </Flex>
+            </Flex>
+            <Separator size="4" color="blue" />
+
+              <Flex className="text-white flex-col sm:flex-row py-8 gap-8" justify='between'>
               <Flex className="w-full sm:w-3/5 flex-col sm:flex-row" gap='5'>
                 <Flex gap="4" justify="start" sm="justify-center" className="flex-row md:flex-col lg:flex-row w-full items-center md:items-start lg:items-center" >
                   <FooterPhone />
@@ -57,104 +172,7 @@ export default function Footer() {
               </Flex>
             </Flex>
             <Separator size="4" color="blue" />
-            <Flex className="text-white py-8 flex-col lg:flex-row gap-2 lg:gap-[100px]">
-              {/* Footer logo   */}
-              <Flex direction='column' className="py-8 lg:py-0" gap='4'>
-                <NavLink to="/" activeClassName="text-gray-500">
-                  <img src={footer_logo} alt="Logo" className="" />
-                </NavLink>
-                <Text className="text-base font-medium sm:text-start text-white" >
-                  ISO 9001 : 2015 Certified Company
-                </Text>
-              </Flex>
-              <Flex className="flex-1 flex-col sm:flex-row gap-8 sm:gap-0" justify='between'>
-                {/* quick links section   */}
-                <Flex className="!justify-start sm:!justify-center px-0 sm:px-2">
-                  <Flex className="col-span-1 lg:col-span-2  !justify-start sm:!justify-center" >
-                    <Flex direction="column" gap="4" className="text-start" >
-                      <Text as="h4" className="text-lg font-bold text-white mb-2" >
-                        Quick Links
-                      </Text>
-                      <NavLink to="/" className="text-white hover:underline">
-                        Home
-                      </NavLink>
-                      <NavLink to="/about-us" className="text-white hover:underline">
-                        About Us
-                      </NavLink>
-                      <NavLink to="/contact" className="text-white hover:underline">
-                        Contact Us
-                      </NavLink>
-                      <NavLink to="/contact" className="text-white hover:underline">
-                        Become our dealer
-                      </NavLink>
-                    </Flex>
-                  </Flex>
-                </Flex>
-                {/* our products section  */}
-                <Flex className="!justify-start sm:!justify-center px-0 sm:px-2">
-                  <Flex className="col-span-1 lg:col-span-2  !justify-start sm:!justify-center" >
-                    <Flex direction="column" gap="4" className="text-start">
-                      <Text as="h4" className="text-lg font-bold text-white mb-2" >
-                        Our Products{" "}
-                      </Text>
-                      <NavLink to="/csr-activity" className="text-white hover:underline">
-                        Ophthalmic Refraction Unit
-                      </NavLink>
-                      <NavLink to="/export-activity" className="text-white hover:underline" >
-                        Ophthalmic Opretion Table
-                      </NavLink>
-                      <NavLink to="/export-activity" className="text-white hover:underline" >
-                        Ophthalmic Instrument Table
-                      </NavLink>
-                      <NavLink to="/export-activity" className="text-white hover:underline" >
-                        Arm For Phoropter
-                      </NavLink>
-                      <NavLink to="/export-activity" className="text-white hover:underline" >
-                        Surgeon’s Chair
-                      </NavLink>
-                    </Flex>
-                  </Flex>
-                </Flex>
-                {/* service and social section  */}
-                <Flex className="!justify-start sm:!justify-center px-0 sm:px-2">
-                  <Flex className="col-span-1 lg:col-span-2  !justify-start sm:!justify-center" >
-                    <Flex direction='column' justify='between' className="text-start">
-                      <Flex direction="column" gap="4">
-                        <Text as="h4" className="text-lg font-bold text-white mb-2" >
-                          Services
-                        </Text>
-                        <NavLink to="/csr-activity" className="text-white hover:underline" >
-                          CSR
-                        </NavLink>
-                        <NavLink to="/ware-house" className="text-white hover:underline" >
-                          workshop
-                        </NavLink>
-                      </Flex>
-                      <Flex direction='column'>
-                        <Text as="h4" className="text-lg font-bold text-white mb-2" >
-                          Social
-                        </Text>
-                        <Flex gap="5" pt="4" className="!justify-center md:!justify-start">
-                          <Box className="cursor-pointer">
-                            <Instagram />
-                          </Box>
-                          <Box className="cursor-pointer">
-                            <Facebook />
-                          </Box>
-                          <Box className="cursor-pointer">
-                            <Twitter />
-                          </Box>
-                          <Box className="cursor-pointer">
-                            <Linkedin />
-                          </Box>
-                        </Flex>
-                      </Flex>
-                    </Flex>
-                  </Flex>
-                </Flex>
-              </Flex>
-            </Flex>
-            <Separator size="4" color="blue" />
+
             <Flex className="flex-col sm:flex-row" align="center" justify='center' py='6' >
               <Text className="text-white" size="2">
                 © Ophthalmatic 2024 All right reserved.

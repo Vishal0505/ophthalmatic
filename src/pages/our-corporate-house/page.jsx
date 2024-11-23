@@ -6,8 +6,15 @@ import building4 from "../../assets/corporate/ch4.jpg";
 import building5 from "../../assets/corporate/ch5.jpg";
 import BackgroundImage from "../../components/ui/background-image";
 import bgimg from "../../assets/bg/bgimg.jpg";
+import { useEffect } from "react";
 
 export default function OurCorporateHouse() {
+    useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // Optional: Adds smooth scrolling effect
+  });
+}, []);
     return (
         <Box className="relative  bg-gradient-to-b from-blue-300 via-purple-300 to-indigo-300 inset-0">
             <BackgroundImage imageUrl={bgimg} opacity={0.7} />

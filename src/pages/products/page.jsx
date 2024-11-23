@@ -1,6 +1,6 @@
 import { Button, Flex, Text } from "@radix-ui/themes";
 import Container from "../../components/ui/container";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Breadcrumb from "../../components/ui/breadcrumb";
 import HaveQuestion from "../home/have-question";
@@ -13,6 +13,12 @@ export default function ProductPage() {
   const filteredProducts = Products.filter(
     (product) => product.category === selectedCategory
   );
+  useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // Optional: Adds smooth scrolling effect
+  });
+}, []);
 
   return (
     <Flex direction="column" gap="8">
@@ -27,7 +33,8 @@ export default function ProductPage() {
                 color={selectedCategory === category ? "" : "gray"}
                 variant={selectedCategory === category ? "solid" : "outline"}
                 radius="medium"
-                className={`${selectedCategory === category ? "!bg-primary" : "!bg-white !border !border-red-300"
+                className={`${selectedCategory === category ? "!bg-primary" : "!bg-white"
+                // className={`${selectedCategory === category ? "!bg-primary" : "!bg-white !border !border-red-300"
                   }`}
                 onClick={() => setSelectedCategory(category)}
               >

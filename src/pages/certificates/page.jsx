@@ -1,5 +1,5 @@
 import { Box, Text } from "@radix-ui/themes";
-import React from "react";
+import React, { useEffect } from "react";
 import BackgroundImage from "../../components/ui/background-image";
 import bgimg from "../../assets/bg/bgimg.jpg";
 import certi_1 from "../../assets/certificates/certi_1.png";
@@ -8,6 +8,12 @@ import certi_3 from "../../assets/certificates/certi_3.png";
 import certi_4 from "../../assets/certificates/certi_4.png";
 
 export default function Certificates() {
+  useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // Optional: Adds smooth scrolling effect
+  });
+}, []);
   return (
     <Box className="relative bg-gradient-to-b from-blue-300 via-purple-300 to-indigo-300 inset-0 p-6 sm:p-4">
       <BackgroundImage imageUrl={bgimg} opacity={0.7} />

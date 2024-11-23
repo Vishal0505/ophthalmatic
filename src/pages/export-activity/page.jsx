@@ -7,8 +7,15 @@ import export4 from "../../assets/export/export4.jpg";
 
 import bgimg from "../../assets/bg/bgimg.jpg";
 import BackgroundImage from "../../components/ui/background-image";
+import { useEffect } from "react";
 
 export default function ExportActivity() {
+    useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // Optional: Adds smooth scrolling effect
+  });
+}, []);
     return (
         <Box className="relative bg-gradient-to-b from-blue-300 via-purple-300 to-indigo-300 inset-0">
             <BackgroundImage imageUrl={bgimg} opacity={0.7} />

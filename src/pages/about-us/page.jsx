@@ -1,5 +1,5 @@
 import { Box, Button, Card, Flex, Separator, Text } from "@radix-ui/themes";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import about_us from '../../assets/about/about_us.jpg';
 import compassion from "../../assets/about/compassion.png";
 import cure from "../../assets/about/cure.png";
@@ -24,6 +24,7 @@ import Container from "../../components/ui/container";
 import Certificates from "../home/certificates";
 import HaveQuestion from "../home/have-question";
 import WhyChooseUs from "../home/why-us";
+import { useEffect } from "react";
 
 export default function AboutUs() {
     const location = useLocation();
@@ -40,7 +41,21 @@ export default function AboutUs() {
         { src: innovation, label: 'Innovation' },
         { src: education, label: 'Education' }
     ];
-
+    useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // Optional: Adds smooth scrolling effect
+  });
+}, []);
+ const whatsapplink = () => {
+        const phoneNumber = '+918140259610';
+        const message = 'Hello, I need help!';
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        setTimeout(() => {
+            window.open(whatsappUrl, '_blank');
+        }, 100);
+    };
     return (
         <Flex direction='column'>
             {isAboutPage && (
@@ -116,9 +131,14 @@ export default function AboutUs() {
                                             <Text className="text-base text-end ">As the Founder & Chairman of Gadhiya Group, Bansil Gadhiya brings over a decade of expertise in pioneering medical equipment innovation. His extensive experience spans a diverse range of roles, including working closely with doctors, dealers, and importers to overcome industry challenges and drive significant business growth.</Text>
                                             <Flex gap='5'>
                                                 <Text>
-                                                    <LinkedinRound />
                                                 </Text>
-                                                <Text>
+                                                 <NavLink to="https://www.linkedin.com/in/bansil-gadhiya?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " className="text-white hover:underline" >
+                          <Box className="cursor-pointer">
+                                                                                <LinkedinRound />
+
+                          </Box>
+                          </NavLink>
+                                                <Text onClick={()=>{whatsapplink()}}>
                                                     <WhatsappRound />
                                                 </Text>
                                             </Flex>
