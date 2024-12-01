@@ -16,7 +16,7 @@ export default function Header() {
 
   const navLinks = [
     { path: '/', name: 'Home' },
-    { name: 'Company', isDropdown: true }, // No path, it's just for dropdown
+    { name: 'Company', isDropdown: true }, 
     { path: '/product', name: 'Products' },
     { path: '/about-us', name: 'About Us' },
     { path: '/contact', name: 'Contact Us' },
