@@ -17,15 +17,12 @@ export default function SpecificProductPage() {
           <div className="flex flex-col gap-6 py-6">
             <Card>
               <div className="flex flex-col sm:flex-row justify-center gap-8 sm:gap-16 px-2 sm:px-8 py-6 sm:py-6 ">
-                <div className="sm:w-1/3 flex justify-center items-center border border-red-500">
+                <div className="sm:w-1/3 sm:h-1/3 flex flex-col justify-center items-center ">
                   <img
                     src={product.imageUrl}
                     alt={product.name}
-                    className=" h-auto  object-cover rounded-md mb-4 border border-red-500"
+                    className=" sm:h-72  object-cover rounded-md mb-4 "
                   />
-                </div>
-
-                <div className="flex flex-col sm:w-2/3 gap-6">
                   <Box>
                     <Text size="6">
                       {" "}
@@ -33,11 +30,17 @@ export default function SpecificProductPage() {
                       {product.name}
                     </Text>
                   </Box>
+                </div>
+              </div>
+              <div className="flex gap-2 flex-col">
+                <div className=" flex flex-col  gap-6">
                   {product.features && (
-                    <Box>
-                      <Text size="2" weight="medium" mb={2}>
-                        FEATURES
-                      </Text>
+                    <Box className=" border border-gray-300 rounded-md">
+                      <Box className="bg-background py-2 rounded-t-md">
+                        <Text size="3" weight="medium" mb={2} className="pl-2">
+                          FEATURES
+                        </Text>
+                      </Box>
                       <ul className="list-disc list-inside space-y-2 pl-5 ">
                         {product.features.map((feature, index) => (
                           <li key={index} className="text-gray-700">
@@ -48,8 +51,6 @@ export default function SpecificProductPage() {
                     </Box>
                   )}
                 </div>
-              </div>
-              <div className="flex gap-2 flex-col">
                 <Box className=" border border-gray-300 rounded-md">
                   <Box className="bg-background py-2 rounded-t-md">
                     <Text size="3" weight="medium" mb={2} className="pl-2">

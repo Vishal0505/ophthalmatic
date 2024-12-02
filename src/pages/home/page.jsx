@@ -10,11 +10,14 @@ import WhyChooseUs from "./why-us";
 
 export default function HomePage() {
   return (
-    <Flex direction='column' gap='8'>
+    <Flex direction="column" gap="8">
       <Herosection />
       <AboutUs />
       <WhyChooseUs />
-      <OurProducts title={"Our Products"} subTitles={"Explore Our Premium Products"} />
+      <OurProducts
+        title={"Our Products"}
+        subTitles={"Explore Our Premium Products"}
+      />
       <Animation />
       <OurHorizon />
       <Box className="bg-skyblue py-12">
@@ -22,5 +25,5 @@ export default function HomePage() {
       </Box>
       <Certificates />
     </Flex>
-  )
+  );
 }

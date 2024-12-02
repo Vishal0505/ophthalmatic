@@ -1,11 +1,11 @@
-import { Box, Text } from "@radix-ui/themes";
+import { Box } from "@radix-ui/themes";
 import React from "react";
-import BackgroundImage from "../../components/ui/background-image";
 import bgimg from "../../assets/bg/bgimg.jpg";
 import certi_1 from "../../assets/certificates/certi_1.png";
 import certi_2 from "../../assets/certificates/certi_2.png";
 import certi_3 from "../../assets/certificates/certi_3.png";
 import certi_4 from "../../assets/certificates/certi_4.png";
+import BackgroundImage from "../../components/ui/background-image";
 
 export default function Certificates() {
   return (
