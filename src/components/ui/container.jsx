@@ -12,7 +12,3 @@ Container.propTypes = {
     children: PropTypes.node.isRequired,
     className: PropTypes.string,
 };
-
-Container.defaultProps = {
-    className: '',
-};

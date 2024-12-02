@@ -5,7 +5,7 @@ import Phone from "../../components/icons/phone";
 
 export default function Herosection() {
   return (
-    <Box className=" px-6 bg-cover bg-center" style={{ backgroundImage: `url(${hero_bg})` }}>
+    <Box className="px-0 sm:px-6 bg-cover bg-center" style={{ backgroundImage: `url(${hero_bg})` }}>
       <Container className="h-full">
         <Flex justify='center' align='center' className=" pb-24 pt-10 sm:pb-32 sm:pt-12">
           <Flex  className="w-3/4 sm:w-2/3 gap-8 sm:gap-6" direction='column'  justify='center' align='center' height='100%'>
