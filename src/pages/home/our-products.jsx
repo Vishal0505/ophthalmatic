@@ -1,15 +1,11 @@
 import { Box, Flex, Text } from "@radix-ui/themes";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
-import Prod1 from "../../assets/Products/prem-1.png";
-import Prod2 from "../../assets/Products/prem-2.png";
-import Prod3 from "../../assets/Products/prem-3.png";
-import Prod4 from "../../assets/Products/prem-4.png";
-import Container from "../../components/ui/container";
+import { useNavigate } from "react-router-dom";
 import LeftArrow from "../../components/icons/round/left-arrow";
 import RightArrow from "../../components/icons/round/right-arrow";
+import Container from "../../components/ui/container";
 import { Products } from "../products/constant";
-import { useNavigate } from "react-router-dom";
 // const Products = [
 //   {
 //     id: 1,
@@ -64,6 +60,7 @@ export default function OurProducts({ title, subTitles }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerSlide, setItemsPerSlide] = useState(4);
   let navigate = useNavigate();
+
 
   // let itemsPerSlide = 4
   // let itemsPerSlide = useBreakpointValue({ base: 1, md: 2, lg: 4 });
