@@ -1,5 +1,6 @@
 import { Button, Flex, Text } from "@radix-ui/themes";
-import { useState } from "react";
+import Container from "../../components/ui/container";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Breadcrumb from "../../components/ui/breadcrumb";
 import Container from "../../components/ui/container";
@@ -33,11 +34,9 @@ export default function ProductPage() {
                 color={selectedCategory === category ? "" : "gray"}
                 variant={selectedCategory === category ? "solid" : "outline"}
                 radius="medium"
-                className={`${
-                  selectedCategory === category
-                    ? "!bg-primary"
-                    : "!bg-white !border !border-red-300"
-                }`}
+                className={`${selectedCategory === category ? "!bg-primary" : "!bg-white"
+                // className={`${selectedCategory === category ? "!bg-primary" : "!bg-white !border !border-red-300"
+                  }`}
                 onClick={() => setSelectedCategory(category)}
               >
                 <Text

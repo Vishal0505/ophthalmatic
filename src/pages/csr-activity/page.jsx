@@ -12,7 +12,6 @@ import Breadcrumb from "../../components/ui/breadcrumb";
 import Container from "../../components/ui/container";
 
 export default function CsrActivity() {
-
   return (
     <Flex direction="column">
       <Breadcrumb

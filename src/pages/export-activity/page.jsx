@@ -8,7 +8,6 @@ import bgimg from "../../assets/bg/bgimg.jpg";
 import BackgroundImage from "../../components/ui/background-image";
 
 export default function ExportActivity() {
-
   return (
     <Box className="relative bg-gradient-to-b from-blue-300 via-purple-300 to-indigo-300 inset-0">
       <BackgroundImage imageUrl={bgimg} opacity={0.7} />

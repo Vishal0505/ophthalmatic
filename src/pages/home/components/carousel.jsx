@@ -59,7 +59,7 @@ const Slider = ({
         {currentItems.map((item) => (
           <div
             key={item.id}
-            className="flex-shrink-0 px-4 "
+            className="flex-shrink-0 px-4"
           >
             <div className="p-4 bg-white rounded-md border border-gray-300">
               <img

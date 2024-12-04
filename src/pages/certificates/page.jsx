@@ -1,5 +1,7 @@
-import { Box } from "@radix-ui/themes";
-import React from "react";
+
+import { Box, Text } from "@radix-ui/themes";
+import React, { useEffect } from "react";
+import BackgroundImage from "../../components/ui/background-image";
 import bgimg from "../../assets/bg/bgimg.jpg";
 import certi_1 from "../../assets/certificates/certi_1.png";
 import certi_2 from "../../assets/certificates/certi_2.png";
