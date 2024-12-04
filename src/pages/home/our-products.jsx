@@ -6,6 +6,7 @@ import LeftArrow from "../../components/icons/round/left-arrow";
 import RightArrow from "../../components/icons/round/right-arrow";
 import Container from "../../components/ui/container";
 import { Products } from "../products/constant";
+import { scrollToTop } from "../../utils/utils";
 // const Products = [
 //   {
 //     id: 1,
@@ -124,18 +125,16 @@ export default function OurProducts({ title, subTitles }) {
                 <RightArrow />
               </Box> */}
               <Box
-                className={`cursor-pointer ${
-                  currentIndex === 0 && "opacity-50 pointer-events-none"
-                }`}
+                className={`cursor-pointer ${currentIndex === 0 && "opacity-50 pointer-events-none"
+                  }`}
                 onClick={handlePrev}
               >
                 <LeftArrow />
               </Box>
               <Box
-                className={`cursor-pointer ${
-                  currentIndex === totalSlides - 1 &&
+                className={`cursor-pointer ${currentIndex === totalSlides - 1 &&
                   "opacity-50 pointer-events-none"
-                }`}
+                  }`}
                 onClick={handleNext}
               >
                 <RightArrow />
@@ -148,7 +147,7 @@ export default function OurProducts({ title, subTitles }) {
                 key={item.id}
                 className="flex-1"
                 onClick={() => {
-                  console.log("clicked")
+                  scrollToTop();
                   navigate("/product-detail", { state: { product: item } });
                 }}
               >
