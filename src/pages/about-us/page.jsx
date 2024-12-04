@@ -1,5 +1,5 @@
 import { Box, Button, Card, Flex, Separator, Text } from "@radix-ui/themes";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import about_us from "../../assets/about/about_us.jpg";
 import compassion from "../../assets/about/compassion.png";
 import cure from "../../assets/about/cure.png";
@@ -24,7 +24,7 @@ import Container from "../../components/ui/container";
 import Certificates from "../home/certificates";
 import HaveQuestion from "../home/have-question";
 import WhyChooseUs from "../home/why-us";
-import { scrollToTop } from "../../utils/utils";
+import { scrollToTop, whatsapplink } from "../../utils/utils";
 
 export default function AboutUs() {
   const location = useLocation();
@@ -143,10 +143,16 @@ export default function AboutUs() {
                       </Text>
                       <Flex gap="5">
                         <Text>
-                          <LinkedinRound />
+                          <NavLink target="_blank" to="https://www.linkedin.com/in/bansil-gadhiya?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " className="text-white hover:underline" >
+                            <Box className="cursor-pointer">
+                              <LinkedinRound />
+                            </Box>
+                          </NavLink>
                         </Text>
                         <Text>
-                          <WhatsappRound />
+                          <NavLink onClick={whatsapplink}>
+                            <WhatsappRound />
+                          </NavLink>
                         </Text>
                       </Flex>
                     </Flex>

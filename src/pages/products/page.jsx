@@ -1,6 +1,5 @@
 import { Button, Flex, Text } from "@radix-ui/themes";
-import Container from "../../components/ui/container";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Breadcrumb from "../../components/ui/breadcrumb";
 import Container from "../../components/ui/container";

@@ -37,7 +37,7 @@ export default function Founders() {
   const items = founders.map((founder, index) => (
     <Box key={index}
       className="relative bg-white p-6 rounded-lg border border-gray-300 shadow-md flex flex-col justify-between h-96 mx-4">
-      <Box className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-t-lg"></Box>
+      <Box className="absolute top-0 left-0 w-full h-2 rounded-t-lg"></Box>
       <Box className="flex justify-center items-center mb-4">
         {founder.photo ? (
           <img src={founder.photo} alt={founder.name} className="w-24 h-24 rounded-full object-cover border-4 border-indigo-300" />
@@ -60,9 +60,9 @@ export default function Founders() {
   ));
 
   return (
-    <Box className="relative  bg-gradient-to-b from-blue-300 via-purple-300 to-indigo-300 inset-0">
+    <Box className="inset-0">
       <BackgroundImage imageUrl={bgimg} opacity={0.7} />
-      <Section className="relative max-w-4xl mx-auto px-4 z-10">
+      <Section className=" max-w-4xl mx-auto px-4 z-10">
         <Heading
           as="h2"
           className="text-4xl font-extrabold text-center text-gray-900 mb-8"
@@ -80,7 +80,6 @@ export default function Founders() {
           disableButtonsControls={true}
         />
       </Section>
-      <Box className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-l from-pink-300 to-transparent rounded-full transform -translate-x-1/2 translate-y-1/2"></Box>
     </Box>
 
   );

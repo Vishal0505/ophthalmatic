@@ -8,22 +8,12 @@ import ic6 from "../../assets/international/ic6.jpg";
 import ic7 from "../../assets/international/ic7.jpg";
 import ic8 from "../../assets/international/ic8.jpg";
 
-import BackgroundImage from "../../components/ui/background-image";
-import bgimg from "../../assets/bg/bgimg.jpg";
-import { useEffect } from "react";
 
 export default function InternationalConference() {
-    useEffect(() => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth", // Optional: Adds smooth scrolling effect
-  });
-}, []);
     return (
-        <Box className="relative  bg-gradient-to-b from-blue-300 via-purple-300 to-indigo-300 inset-0">
-            <BackgroundImage imageUrl={bgimg} opacity={0.7} />
-            <Section className="relative max-w-7xl mx-auto px-4 z-10">
-                <Heading as="h2" className=" text-center text-6xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-800 to-purple-800">
+        <Box className=" inset-0">
+            <Section className=" max-w-7xl mx-auto px-4 z-10">
+                <Heading as="h2" className=" text-center text-6xl font-extrabold mb-6 text-transparent bg-clip-text ">
                     International Conference
                 </Heading>
                 <Grid columns="4" gap="4">
@@ -87,7 +77,6 @@ export default function InternationalConference() {
                     </Box>
                 </Grid>
             </Section>
-            <Box className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-l from-pink-300 to-transparent rounded-full transform -translate-x-1/2 translate-y-1/2"></Box>
         </Box>
     );
 }

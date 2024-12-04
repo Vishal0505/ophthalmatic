@@ -9,6 +9,7 @@ import Instagram from "./icons/instagram";
 import Facebook from "./icons/facebook";
 import Twitter from "./icons/twitter";
 import Linkedin from "./icons/linkedin";
+import { scrollToTop } from "../utils/utils";
 
 export default function Footer() {
 
@@ -18,7 +19,7 @@ export default function Footer() {
         <Container>
           <Flex direction="column">
             {/*  contact section   */}
-          
+
             <Flex className="text-white py-8 flex-col lg:flex-row gap-2 lg:gap-[100px]">
               {/* Footer logo   */}
               <Flex direction='column' className="py-8 lg:py-0" gap='4'>
@@ -37,16 +38,16 @@ export default function Footer() {
                       <Text as="h4" className="text-lg font-bold text-white mb-2" >
                         Quick Links
                       </Text>
-                      <NavLink to="/" onClick={scrollToTop} className="text-white hover:underline">
+                      <NavLink to="/" onClick={scrollToTop} className="text-white hover:text-primary">
                         Home
                       </NavLink>
-                      <NavLink to="/about-us" onClick={scrollToTop} className="text-white hover:underline">
+                      <NavLink to="/about-us" onClick={scrollToTop} className="text-white hover:text-primary">
                         About Us
                       </NavLink>
-                      <NavLink to="/contact" onClick={scrollToTop} className="text-white hover:underline">
+                      <NavLink to="/contact" onClick={scrollToTop} className="text-white hover:text-primary">
                         Contact Us
                       </NavLink>
-                      <NavLink to="/dealership" onClick={scrollToTop} className="text-white hover:underline">
+                      <NavLink to="/dealership" onClick={scrollToTop} className="text-white hover:text-primary">
 
                         Become our dealer
                       </NavLink>
@@ -60,19 +61,19 @@ export default function Footer() {
                       <Text as="h4" className="text-lg font-bold text-white mb-2" >
                         Our Products{" "}
                       </Text>
-                      <NavLink to="/product" className="text-white hover:underline" onClick={scrollToTop}>
+                      <NavLink to="/product" className="text-white hover:text-primary" onClick={scrollToTop}>
                         Ophthalmic Refraction Unit
                       </NavLink>
-                      <NavLink to="/product" className="text-white hover:underline" onClick={scrollToTop}>
+                      <NavLink to="/product" className="text-white hover:text-primary" onClick={scrollToTop}>
                         Ophthalmic Opretion Table
                       </NavLink>
-                      <NavLink to="/product" className="text-white hover:underline" onClick={scrollToTop} >
+                      <NavLink to="/product" className="text-white hover:text-primary" onClick={scrollToTop} >
                         Ophthalmic Instrument Table
                       </NavLink>
-                      <NavLink to="/product" className="text-white hover:underline" onClick={scrollToTop}>
+                      <NavLink to="/product" className="text-white hover:text-primary" onClick={scrollToTop}>
                         Arm For Phoropter
                       </NavLink>
-                      <NavLink to="/product" className="text-white hover:underline" onClick={scrollToTop}>
+                      <NavLink to="/product" className="text-white hover:text-primary" onClick={scrollToTop}>
                         Surgeon’s Chair
                       </NavLink>
                     </Flex>
@@ -86,10 +87,10 @@ export default function Footer() {
                         <Text as="h4" className="text-lg font-bold text-white mb-2" onClick={scrollToTop}>
                           Services
                         </Text>
-                        <NavLink to="/csr-activity" className="text-white hover:underline" onClick={scrollToTop}>
+                        <NavLink to="/csr-activity" className="text-white hover:text-primary" onClick={scrollToTop}>
                           CSR
                         </NavLink>
-                        <NavLink to="/ware-house" className="text-white hover:underline" onClick={scrollToTop} >
+                        <NavLink to="/ware-house" className="text-white hover:text-primary" onClick={scrollToTop} >
                           workshop
                         </NavLink>
                       </Flex>
@@ -98,25 +99,25 @@ export default function Footer() {
                           Social
                         </Text>
                         <Flex gap="5" pt="4" className="!justify-center md:!justify-start">
-                          <NavLink to="https://www.instagram.com/ophthalmatic/profilecard/?igsh=dDc4czBnOHZqZmls " className="text-white hover:underline" >
-                          <Box className="cursor-pointer">
-                            <Instagram />
-                          </Box>
+                          <NavLink target="_blank" to="https://www.instagram.com/ophthalmatic/profilecard/?igsh=dDc4czBnOHZqZmls " className="text-white hover:text-primary" >
+                            <Box className="cursor-pointer">
+                              <Instagram />
+                            </Box>
                           </NavLink>
-                          <NavLink to="https://www.facebook.com/share/15SQQ4QmZN/ " className="text-white hover:underline" >
-                          <Box className="cursor-pointer">
-                            <Facebook />
-                          </Box>
+                          <NavLink target="_blank" to="https://www.facebook.com/share/15SQQ4QmZN/ " className="text-white hover:text-primary" >
+                            <Box className="cursor-pointer">
+                              <Facebook />
+                            </Box>
                           </NavLink>
-                          <NavLink to="" className="text-white hover:underline" >
-                          <Box className="cursor-pointer">
-                            <Twitter />
-                          </Box>
+                          <NavLink target="_blank" to="" className="text-white hover:text-primary" >
+                            <Box className="cursor-pointer">
+                              <Twitter />
+                            </Box>
                           </NavLink>
-                          <NavLink to="https://www.linkedin.com/in/bansil-gadhiya?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " className="text-white hover:underline" >
-                          <Box className="cursor-pointer">
-                            <Linkedin />
-                          </Box>
+                          <NavLink target="_blank" to="https://www.linkedin.com/in/bansil-gadhiya?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " className="text-white hover:text-primary" >
+                            <Box className="cursor-pointer">
+                              <Linkedin />
+                            </Box>
                           </NavLink>
                         </Flex>
                       </Flex>
@@ -127,7 +128,7 @@ export default function Footer() {
             </Flex>
             <Separator size="4" color="blue" />
 
-              <Flex className="text-white flex-col sm:flex-row py-8 gap-8" justify='between'>
+            <Flex className="text-white flex-col sm:flex-row py-8 gap-8" justify='between'>
               <Flex className="w-full sm:w-3/5 flex-col sm:flex-row" gap='5'>
                 <Flex gap="4" justify="start" sm="justify-center" className="flex-row md:flex-col lg:flex-row w-full items-center md:items-start lg:items-center" >
                   <FooterPhone />
