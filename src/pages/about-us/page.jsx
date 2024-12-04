@@ -24,6 +24,7 @@ import Container from "../../components/ui/container";
 import Certificates from "../home/certificates";
 import HaveQuestion from "../home/have-question";
 import WhyChooseUs from "../home/why-us";
+import { scrollToTop } from "../../utils/utils";
 
 export default function AboutUs() {
   const location = useLocation();
@@ -89,7 +90,7 @@ export default function AboutUs() {
                 </Flex>
                 {!isAboutPage && (
                   <Flex className="justify-center">
-                    <Button
+                    <Button onClick={scrollToTop}
                       variant="outline"
                       size="4"
                       radius="full"

@@ -6,19 +6,20 @@ import logo from "../assets/logo/logo.png";
 import Email from './icons/email';
 import Phone from './icons/phone';
 import Container from './ui/container';
+import { scrollToTop } from '../utils/utils';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleLinkClick = () => {
+    scrollToTop();
     setIsOpen(false);
   };
 
   const navLinks = [
     { path: '/', name: 'Home' },
-    { name: 'Company', isDropdown: true }, 
+    { name: 'Company', isDropdown: true },
     { path: '/product', name: 'Products' },
-    { path: '/about-us', name: 'About Us' },
     { path: '/contact', name: 'Contact Us' },
     { path: '/dealership', name: 'Become our dealer ' },
   ];
@@ -55,7 +56,7 @@ export default function Header() {
           <Container>
             <Flex align="center" justify="between" className='py-7'>
               <Box className="text-2xl font-bold">
-                <NavLink to="/" activeClassName="text-gray-500">
+                <NavLink to="/" activeClassName="text-gray-500" onClick={scrollToTop}>
                   <img src={logo} alt="Logo" />
                 </NavLink>
               </Box>
@@ -87,7 +88,7 @@ export default function Header() {
                           </DropdownMenu.Content>
                         </DropdownMenu.Root>
                       ) : (
-                        <NavLink
+                        <NavLink onClick={scrollToTop}
                           to={link.path}
                           className={({ isActive }) => isActive ? 'text-primary' : 'hover:text-primary'}
                         >
@@ -109,54 +110,28 @@ export default function Header() {
                 <Flex direction='column' justify='center' align='center'>
                   {navLinks.map((link, index) => (
                     <div key={link.path} className={`border-b w-full text-center ${index < navLinks.length - 1 ? 'border-gray-300' : ''} ${index === 0 ? 'border-t border-gray-300' : ''}`}>
+                      {link.name !== "Company" && (
+                        <NavLink
+                          to={link.path}
+                          className={({ isActive }) => `py-2 block w-full ${isActive ? 'text-primary' : 'hover:text-primary'}`}
+                          onClick={handleLinkClick}
+                        >
+                          {console.log("link", link.name === "Company")}
+                          {link.name}
+                        </NavLink>
+                      )}
+
+                    </div>
+                  ))}
+                  {companyDropdownLinks.map((link, index) => (
+                    <div key={link.path} className={`border-b w-full text-center ${index < navLinks.length - 1 ? 'border-gray-300' : ''} ${index === 0 ? 'border-t border-gray-300' : ''}`}>
                       <NavLink
                         to={link.path}
-                        className="hover:text-primary py-2 block w-full"
+                        className={({ isActive }) => `py-2 block w-full ${isActive ? 'text-primary' : 'hover:text-primary'}`}
                         onClick={handleLinkClick}
                       >
                         {link.name}
                       </NavLink>
-                      {link.isDropdown && isOpen && (
-                        <>
-                          <Box className="bg-white shadow-lg mt-2 w-full">
-                            {companyDropdownLinks.map((dropdownLink) => (
-                              <NavLink
-                                key={dropdownLink.path}
-                                to={dropdownLink.path}
-                                className="hover:text-primary py-2 block text-center"
-                                onClick={handleLinkClick}
-                              >
-                                {dropdownLink.name}
-                              </NavLink>
-                            ))}
-                          </Box>
-                          <DropdownMenu.Root >
-                            <DropdownMenu.Trigger asChild>
-                              <NavLink
-                                to={link.path}
-                                className={({ isActive }) => `flex ${isActive ? 'text-primary' : 'hover:text-primary'}`}
-                              >
-                                <Flex gap='1' align='center'>
-                                  Company
-                                  <DropdownMenu.TriggerIcon />
-                                </Flex>
-                              </NavLink>
-                            </DropdownMenu.Trigger>
-                            <DropdownMenu.Content className="bg-white shadow-lg rounded-lg w-full">
-                              {companyDropdownLinks.map((dropdownLink) => (
-                                <NavLink
-                                  key={dropdownLink.path}
-                                  to={dropdownLink.path}
-                                  className="hover:text-primary py-2 block w-full"
-                                  onClick={handleLinkClick}
-                                >
-                                  {dropdownLink.name}
-                                </NavLink>
-                              ))}
-                            </DropdownMenu.Content>
-                          </DropdownMenu.Root>
-                        </>
-                      )}
                     </div>
                   ))}
                 </Flex>
@@ -164,7 +139,7 @@ export default function Header() {
             )}
           </Container>
         </header>
-      </Box >
+      </Box>
     </>
   );
 }
