@@ -1,15 +1,12 @@
 import { Box, Flex, Text } from "@radix-ui/themes";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
-import Prod1 from "../../assets/Products/prem-1.png";
-import Prod2 from "../../assets/Products/prem-2.png";
-import Prod3 from "../../assets/Products/prem-3.png";
-import Prod4 from "../../assets/Products/prem-4.png";
-import Container from "../../components/ui/container";
+import { useNavigate } from "react-router-dom";
 import LeftArrow from "../../components/icons/round/left-arrow";
 import RightArrow from "../../components/icons/round/right-arrow";
+import Container from "../../components/ui/container";
 import { Products } from "../products/constant";
-import { useNavigate } from "react-router-dom";
+import { scrollToTop } from "../../utils/utils";
 // const Products = [
 //   {
 //     id: 1,
@@ -64,6 +61,7 @@ export default function OurProducts({ title, subTitles }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerSlide, setItemsPerSlide] = useState(4);
   let navigate = useNavigate();
+
 
   // let itemsPerSlide = 4
   // let itemsPerSlide = useBreakpointValue({ base: 1, md: 2, lg: 4 });
@@ -127,18 +125,16 @@ export default function OurProducts({ title, subTitles }) {
                 <RightArrow />
               </Box> */}
               <Box
-                className={`cursor-pointer ${
-                  currentIndex === 0 && "opacity-50 pointer-events-none"
-                }`}
+                className={`cursor-pointer ${currentIndex === 0 && "opacity-50 pointer-events-none"
+                  }`}
                 onClick={handlePrev}
               >
                 <LeftArrow />
               </Box>
               <Box
-                className={`cursor-pointer ${
-                  currentIndex === totalSlides - 1 &&
+                className={`cursor-pointer ${currentIndex === totalSlides - 1 &&
                   "opacity-50 pointer-events-none"
-                }`}
+                  }`}
                 onClick={handleNext}
               >
                 <RightArrow />
@@ -151,7 +147,7 @@ export default function OurProducts({ title, subTitles }) {
                 key={item.id}
                 className="flex-1"
                 onClick={() => {
-                  console.log("clicked")
+                  scrollToTop();
                   navigate("/product-detail", { state: { product: item } });
                 }}
               >

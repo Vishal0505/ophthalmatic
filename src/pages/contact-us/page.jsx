@@ -16,22 +16,30 @@ useEffect(() => {
   });
 }, []);
   return (
-    <Flex direction='column' gap='8'>
-      <Breadcrumb title="Contact" secondaryTitle="US" path="contact" label="Contact Us" />
-      <Flex gap='8' direction='column' width='100%'>
+    <Flex direction="column" gap="8">
+      <Breadcrumb
+        title="Contact"
+        secondaryTitle="US"
+        path="contact"
+        label="Contact Us"
+      />
+      <Flex gap="8" direction="column" width="100%">
         <Container className="w-full">
-          <Flex className="flex-col md:flex-row w-full contact-cards" gap='8'>
+          <Flex className="flex-col md:flex-row w-full contact-cards" gap="8">
             <Flex className="flex-1 ">
               <Card className="!p-5 w-full bg-white">
-                <Flex direction="column" justify='between' height='100%'>
+                <Flex direction="column" justify="between" height="100%">
                   <Flex>
                     <ContactCall />
                   </Flex>
-                  <Flex direction='column'>
+                  <Flex direction="column">
                     <Text className="font-medium text-[26px] w-full">
                       Contact
                     </Text>
-                    <a className="font-normal text-base" href='tel:+918140259610'>
+                    <a
+                      className="font-normal text-base"
+                      href="tel:+918140259610"
+                    >
                       +91 8140259610
                     </a>
                   </Flex>
@@ -40,15 +48,16 @@ useEffect(() => {
             </Flex>
             <Flex className="flex-1 ">
               <Card className="!p-5 w-full bg-white">
-                <Flex direction="column" justify='between' height='100%'>
+                <Flex direction="column" justify="between" height="100%">
                   <Flex>
                     <ContactMail />
                   </Flex>
-                  <Flex direction='column'>
-                    <Text className="font-medium text-[26px] w-full">
-                      Mail
-                    </Text>
-                    <a className="font-normal text-base" href='mailto:export@gadhiyagroup.com'>
+                  <Flex direction="column">
+                    <Text className="font-medium text-[26px] w-full">Mail</Text>
+                    <a
+                      className="font-normal text-base"
+                      href="mailto:export@gadhiyagroup.com"
+                    >
                       <span>export@gadhiyagroup.com</span>
                     </a>
                   </Flex>
@@ -57,16 +66,17 @@ useEffect(() => {
             </Flex>
             <Flex className="flex-1 ">
               <Card className="!p-5 w-full bg-white">
-                <Flex direction="column" justify='between' height='100%'>
+                <Flex direction="column" justify="between" height="100%">
                   <Flex>
                     <ContactAddress />
                   </Flex>
-                  <Flex direction='column'>
+                  <Flex direction="column">
                     <Text className="font-medium text-[26px] w-full">
                       Address
                     </Text>
                     <Text className="font-normal text-base">
-                      303, Fortune Sky, Nr. Galaxy Bunglow, Nava Naroda, Ahmedabad, Gujarat, 382345.
+                      303, Fortune Sky, Nr. Galaxy Bunglow, Nava Naroda,
+                      Ahmedabad, Gujarat, 382345.
                     </Text>
                   </Flex>
                 </Flex>
@@ -80,5 +90,5 @@ useEffect(() => {
         <img src={map} alt="Logo" className="" />
       </Flex>
     </Flex>
-  )
+  );
 }

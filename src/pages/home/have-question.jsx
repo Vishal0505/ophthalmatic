@@ -9,11 +9,16 @@ import {
   TextField,
 } from "@radix-ui/themes";
 import Container from "../../components/ui/container";
+import { CountrySelect } from "../../components/CountrySelect";
+import { useState } from "react";
 
 export default function HaveQuestion() {
+  const [countries, setCountries] = useState([]);
+  const [selectedCountry, setSelectedCountry] = useState({});
+
   return (
     <>
-      <Flex className="" justify='center'>
+      <Flex className="" justify="center">
         <Container className="w-full">
           <Flex className="justify-center gap-10 flex-col lg:flex-row ">
             <Flex className="justify-end text-start flex-col sm:flex-row ">
@@ -30,8 +35,8 @@ export default function HaveQuestion() {
               <Card variant="surface" className="bg-white !p-[30px] w-full">
                 <Flex className="flex-col gap-5">
                   <Text>
-                    Fill out the form below, and we’ll get back to you as soon as
-                    possible!
+                    Fill out the form below, and we’ll get back to you as soon
+                    as possible!
                   </Text>
                   <Box>
                     <TextField.Root
@@ -49,52 +54,35 @@ export default function HaveQuestion() {
                     />
                   </Box>{" "}
                   <Box>
-                    <TextField.Root size="3" radius="full" placeholder="Email" />
+                    <TextField.Root
+                      size="3"
+                      radius="full"
+                      placeholder="Email"
+                    />
                   </Box>
                   <Flex direction="column" className="max-w-full">
-                    <Select.Root defaultValue="apple" size="3">
-                      <Select.Trigger radius="full" />
-                      <Select.Content>
-                        <Select.Group>
-                          <Select.Label>Fruits</Select.Label>
-                          <Select.Item value="orange">Orange</Select.Item>
-                          <Select.Item value="apple">Country</Select.Item>
-                          <Select.Item value="grape" disabled>
-                            Grape
-                          </Select.Item>
-                        </Select.Group>
-                        <Select.Separator />
-                        <Select.Group>
-                          <Select.Label>Vegetables</Select.Label>
-                          <Select.Item value="carrot">Carrot</Select.Item>
-                          <Select.Item value="potato">Potato</Select.Item>
-                        </Select.Group>
-                      </Select.Content>
-                    </Select.Root>
+                  <CountrySelect
+                      countries={countries}
+                      setCountries={setCountries}
+                      setSelectedCountry={setSelectedCountry}
+                      selectedCountry={selectedCountry}
+                    />
                   </Flex>
                   <Flex direction="column" className="max-w-full">
-                    <Select.Root defaultValue="apple" size="3">
+                    <Select.Root defaultValue="lorem" size="3">
                       <Select.Trigger radius="full" />
                       <Select.Content>
                         <Select.Group>
-                          <Select.Label>Fruits</Select.Label>
-                          <Select.Item value="orange">Orange</Select.Item>
-                          <Select.Item value="apple">Apple</Select.Item>
-                          <Select.Item value="grape" disabled>
-                            Grape
-                          </Select.Item>
-                        </Select.Group>
-                        <Select.Separator />
-                        <Select.Group>
-                          <Select.Label>Vegetables</Select.Label>
-                          <Select.Item value="carrot">Carrot</Select.Item>
-                          <Select.Item value="potato">Potato</Select.Item>
+                          <Select.Label>Purpose</Select.Label>
+                          <Select.Item value="orange">XYZ</Select.Item>
+                          <Select.Item value="lorem">lorem</Select.Item>
                         </Select.Group>
                       </Select.Content>
                     </Select.Root>
+                    
                   </Flex>
-                  <TextArea radius="full" placeholder="Message" />
-                  <Flex justify='end' align='center'  >
+                  <TextArea size="3" resize="vertical" className="!rounded-2xl" placeholder="Message" />
+                  <Flex justify="end" align="center">
                     <Button
                       variant="solid"
                       size="3"

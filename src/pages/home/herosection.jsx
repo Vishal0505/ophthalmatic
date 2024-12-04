@@ -10,10 +10,10 @@ export default function Herosection() {
     navigate('/contact')
   }
   return (
-    <Box className=" px-6 bg-cover bg-center" style={{ backgroundImage: `url(${hero_bg})` }}>
+    <Box className="px-0 sm:px-6 bg-cover bg-center" style={{ backgroundImage: `url(${hero_bg})` }}>
       <Container className="h-full">
         <Flex justify='center' align='center' className=" pb-24 pt-10 sm:pb-32 sm:pt-12">
-          <Flex  className="w-3/4 sm:w-2/3 gap-8 sm:gap-6" direction='column'  justify='center' align='center' height='100%'>
+          <Flex className="w-3/4 sm:w-2/3 gap-8 sm:gap-6" direction='column' justify='center' align='center' height='100%'>
             <Text className="text-textWhite text-center text-3xl sm:text-6xl font-semibold">
               Reliable <span className="text-yellow-400">Ophthalmic Medical Equipment</span> for Every Practice
             </Text>

@@ -1,26 +1,19 @@
-import { Theme } from '@radix-ui/themes';
-import '@radix-ui/themes/styles.css';
-import './App.css';
-import HomePage from './pages/home/page';
-import { useEffect } from 'react';
-
+import { Theme } from "@radix-ui/themes";
+import "@radix-ui/themes/styles.css";
+import "./App.css";
+import HomePage from "./pages/home/page";
+import { ScrollToTop } from "./pages/home/components/ScrollToTop";
 
 function App() {
-
-useEffect(() => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth", // Optional: Adds smooth scrolling effect
-  });
-}, []);
-  
   return (
     <>
       <Theme>
-        <HomePage />
+        <ScrollToTop>
+          <HomePage />
+        </ScrollToTop>
       </Theme>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

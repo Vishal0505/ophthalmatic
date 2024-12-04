@@ -9,15 +9,9 @@ import Instagram from "./icons/instagram";
 import Facebook from "./icons/facebook";
 import Twitter from "./icons/twitter";
 import Linkedin from "./icons/linkedin";
-import { useEffect } from "react";
 
 export default function Footer() {
-  useEffect(() => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth", // Optional: Adds smooth scrolling effect
-  });
-}, []);
+
   return (
     <>
       <Box className="bg-footerbg">
@@ -28,7 +22,7 @@ export default function Footer() {
             <Flex className="text-white py-8 flex-col lg:flex-row gap-2 lg:gap-[100px]">
               {/* Footer logo   */}
               <Flex direction='column' className="py-8 lg:py-0" gap='4'>
-                <NavLink to="/" activeClassName="text-gray-500">
+                <NavLink to="/" activeClassName="text-gray-500" onClick={scrollToTop}>
                   <img src={footer_logo} alt="Logo" className="" />
                 </NavLink>
                 <Text className="text-base font-medium sm:text-start text-white" >
@@ -43,16 +37,17 @@ export default function Footer() {
                       <Text as="h4" className="text-lg font-bold text-white mb-2" >
                         Quick Links
                       </Text>
-                      <NavLink to="/" className="text-white hover:underline">
+                      <NavLink to="/" onClick={scrollToTop} className="text-white hover:underline">
                         Home
                       </NavLink>
-                      <NavLink to="/about-us" className="text-white hover:underline">
+                      <NavLink to="/about-us" onClick={scrollToTop} className="text-white hover:underline">
                         About Us
                       </NavLink>
-                      <NavLink to="/contact" className="text-white hover:underline">
+                      <NavLink to="/contact" onClick={scrollToTop} className="text-white hover:underline">
                         Contact Us
                       </NavLink>
-                      <NavLink to="/dealership" className="text-white hover:underline">
+                      <NavLink to="/dealership" onClick={scrollToTop} className="text-white hover:underline">
+
                         Become our dealer
                       </NavLink>
                     </Flex>
@@ -65,19 +60,19 @@ export default function Footer() {
                       <Text as="h4" className="text-lg font-bold text-white mb-2" >
                         Our Products{" "}
                       </Text>
-                      <NavLink to="/product" className="text-white hover:underline">
+                      <NavLink to="/product" className="text-white hover:underline" onClick={scrollToTop}>
                         Ophthalmic Refraction Unit
                       </NavLink>
-                      <NavLink to="/product" className="text-white hover:underline" >
+                      <NavLink to="/product" className="text-white hover:underline" onClick={scrollToTop}>
                         Ophthalmic Opretion Table
                       </NavLink>
-                      <NavLink to="/product" className="text-white hover:underline" >
+                      <NavLink to="/product" className="text-white hover:underline" onClick={scrollToTop} >
                         Ophthalmic Instrument Table
                       </NavLink>
-                      <NavLink to="/product" className="text-white hover:underline" >
+                      <NavLink to="/product" className="text-white hover:underline" onClick={scrollToTop}>
                         Arm For Phoropter
                       </NavLink>
-                      <NavLink to="/product" className="text-white hover:underline" >
+                      <NavLink to="/product" className="text-white hover:underline" onClick={scrollToTop}>
                         Surgeon’s Chair
                       </NavLink>
                     </Flex>
@@ -88,13 +83,13 @@ export default function Footer() {
                   <Flex className="col-span-1 lg:col-span-2  !justify-start sm:!justify-center" >
                     <Flex direction='column' justify='between' className="text-start">
                       <Flex direction="column" gap="4">
-                        <Text as="h4" className="text-lg font-bold text-white mb-2" >
+                        <Text as="h4" className="text-lg font-bold text-white mb-2" onClick={scrollToTop}>
                           Services
                         </Text>
-                        <NavLink to="/csr-activity" className="text-white hover:underline" >
+                        <NavLink to="/csr-activity" className="text-white hover:underline" onClick={scrollToTop}>
                           CSR
                         </NavLink>
-                        <NavLink to="/ware-house" className="text-white hover:underline" >
+                        <NavLink to="/ware-house" className="text-white hover:underline" onClick={scrollToTop} >
                           workshop
                         </NavLink>
                       </Flex>

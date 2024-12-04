@@ -11,16 +11,9 @@ import warehouse8 from "../../assets/warehouse/warehouse8.jpg";
 import warehouse9 from "../../assets/warehouse/warehouse9.jpg";
 import Breadcrumb from "../../components/ui/breadcrumb";
 import Container from "../../components/ui/container";
-import { useEffect } from "react";
 
 
 export default function OurWareHouse() {
-    useEffect(() => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth", // Optional: Adds smooth scrolling effect
-  });
-}, []);
     return (
         <Flex direction='column'>
             <Breadcrumb title="Our" secondaryTitle="Warehouse" path="ware-house" label="Our Warehouse" />
