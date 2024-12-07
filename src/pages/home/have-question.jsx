@@ -61,7 +61,7 @@ export default function HaveQuestion() {
                     />
                   </Box>
                   <Flex direction="column" className="max-w-full">
-                  <CountrySelect
+                    <CountrySelect
                       countries={countries}
                       setCountries={setCountries}
                       setSelectedCountry={setSelectedCountry}
@@ -69,17 +69,19 @@ export default function HaveQuestion() {
                     />
                   </Flex>
                   <Flex direction="column" className="max-w-full">
-                    <Select.Root defaultValue="lorem" size="3">
+                    <Select.Root defaultValue="purchase" size="3">
                       <Select.Trigger radius="full" />
                       <Select.Content>
                         <Select.Group>
                           <Select.Label>Purpose</Select.Label>
-                          <Select.Item value="orange">XYZ</Select.Item>
-                          <Select.Item value="lorem">lorem</Select.Item>
+                          <Select.Item value="purchase">For Purchase</Select.Item>
+                          <Select.Item value="dealership">For Dealership</Select.Item>
+                          <Select.Item value="product_sample">For Product Sample</Select.Item>
+                          <Select.Item value="other">Other</Select.Item>
                         </Select.Group>
                       </Select.Content>
                     </Select.Root>
-                    
+
                   </Flex>
                   <TextArea size="3" resize="vertical" className="!rounded-2xl" placeholder="Message" />
                   <Flex justify="end" align="center">
