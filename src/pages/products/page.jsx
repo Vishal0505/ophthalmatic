@@ -5,6 +5,7 @@ import Breadcrumb from "../../components/ui/breadcrumb";
 import Container from "../../components/ui/container";
 import HaveQuestion from "../home/have-question";
 import { Categories, Products } from "./constant";
+import { scrollToTop } from "../../utils/utils";
 
 export default function ProductPage() {
 
@@ -34,14 +35,13 @@ export default function ProductPage() {
                 variant={selectedCategory === category ? "solid" : "outline"}
                 radius="medium"
                 className={`${selectedCategory === category ? "!bg-primary" : "!bg-white"
-                // className={`${selectedCategory === category ? "!bg-primary" : "!bg-white !border !border-red-300"
+                  // className={`${selectedCategory === category ? "!bg-primary" : "!bg-white !border !border-red-300"
                   }`}
                 onClick={() => setSelectedCategory(category)}
               >
                 <Text
-                  className={`${
-                    selectedCategory === category ? "text-white" : "text-black"
-                  }`}
+                  className={`${selectedCategory === category ? "text-white" : "text-black"
+                    }`}
                 >
                   {category}
                 </Text>
@@ -57,6 +57,7 @@ export default function ProductPage() {
                   key={item.id}
                   className="px-4 "
                   onClick={() => {
+                    scrollToTop()
                     navigate("/product-detail", { state: { product: item } });
                   }}
                 >

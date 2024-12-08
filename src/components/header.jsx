@@ -1,15 +1,18 @@
 import { Box, DropdownMenu, Flex } from '@radix-ui/themes';
 import { Menu, SquareMenu } from 'lucide-react';
-import { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import logo from "../assets/logo/logo.png";
+import { scrollToTop } from '../utils/utils';
 import Email from './icons/email';
 import Phone from './icons/phone';
 import Container from './ui/container';
-import { scrollToTop } from '../utils/utils';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const location = useLocation();
+  const currentPath = location.pathname;
 
   const handleLinkClick = () => {
     scrollToTop();
@@ -23,19 +26,13 @@ export default function Header() {
     { path: '/contact', name: 'Contact Us' },
     { path: '/dealership', name: 'Become our dealer ' },
   ];
-  useEffect(() => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth", // Optional: Adds smooth scrolling effect
-  });
-}, []);
-
 
   const companyDropdownLinks = [
     { path: '/about-us', name: 'About' },
     { path: '/ware-house', name: 'Workshop' },
     { path: '/csr-activity', name: 'CSR' },
   ];
+
 
   return (
     <>
@@ -94,10 +91,8 @@ export default function Header() {
                           </DropdownMenu.Content>
                         </DropdownMenu.Root>
                       ) : (
-                        <NavLink onClick={scrollToTop}
-                          to={link.path}
-                          className={({ isActive }) => isActive ? 'text-primary' : 'hover:text-primary'}
-                        >
+                        <NavLink onClick={scrollToTop} to={link.path}
+                          className={({ isActive }) => `block w-full ${link.path === '/product' && (currentPath === '/product' || currentPath === '/product-detail') || isActive ? 'text-primary' : 'hover:text-primary'}`} >
                           {link.name}
                         </NavLink>
                       )}
@@ -122,7 +117,6 @@ export default function Header() {
                           className={({ isActive }) => `py-2 block w-full ${isActive ? 'text-primary' : 'hover:text-primary'}`}
                           onClick={handleLinkClick}
                         >
-                          {console.log("link", link.name === "Company")}
                           {link.name}
                         </NavLink>
                       )}
@@ -131,11 +125,7 @@ export default function Header() {
                   ))}
                   {companyDropdownLinks.map((link, index) => (
                     <div key={link.path} className={`border-b w-full text-center ${index < navLinks.length - 1 ? 'border-gray-300' : ''} ${index === 0 ? 'border-t border-gray-300' : ''}`}>
-                      <NavLink
-                        to={link.path}
-                        className={({ isActive }) => `py-2 block w-full ${isActive ? 'text-primary' : 'hover:text-primary'}`}
-                        onClick={handleLinkClick}
-                      >
+                      <NavLink to={link.path} className={({ isActive }) => `py-2 block w-full ${link.path === '/product' && (currentPath === '/product' || currentPath === '/product-detail') || isActive ? 'text-primary' : 'hover:text-primary'}`} onClick={handleLinkClick}>
                         {link.name}
                       </NavLink>
                     </div>
