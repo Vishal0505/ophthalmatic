@@ -7,64 +7,11 @@ import RightArrow from "../../components/icons/round/right-arrow";
 import Container from "../../components/ui/container";
 import { Products } from "../products/constant";
 import { scrollToTop } from "../../utils/utils";
-// const Products = [
-//   {
-//     id: 1,
-//     name: "Ophthalmic Refraction Unit ",
-//     category: "(OU-03) ",
-//     imageUrl: Prod1,
-//   },
-//   {
-//     id: 2,
-//     name: " Ophthalmic Operation Table ",
-//     category: "(OT - 02)",
-//     imageUrl: Prod2,
-//   },
-//   {
-//     id: 3,
-//     name: "Ophthalmic Operation Table ",
-//     category: "(OT - 01) ",
-//     imageUrl: Prod3,
-//   },
-//   {
-//     id: 4,
-//     name: "Surgeon’s Chair ",
-//     category: "(SC-01)",
-//     imageUrl: Prod4,
-//   },
-//   {
-//     id: 5,
-//     name: "Ophthalmic Operation Table ",
-//     category: "(OT - 01) ",
-//     imageUrl: Prod1,
-//   },
-//   {
-//     id: 6,
-//     name: "Ophthalmic Refraction Unit ",
-//     category: "(OU-03) ",
-//     imageUrl: Prod2,
-//   },
-//   {
-//     id: 7,
-//     name: "Ophthalmic Refraction Unit ",
-//     category: "(OU-03) ",
-//     imageUrl: Prod2,
-//   }, {
-//     id: 8,
-//     name: "Ophthalmic Refraction Unit ",
-//     category: "(OU-03) ",
-//     imageUrl: Prod2,
-//   },
-// ];
 
 export default function OurProducts({ title, subTitles }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerSlide, setItemsPerSlide] = useState(4);
   let navigate = useNavigate();
-
-
-  // let itemsPerSlide = 4
-  // let itemsPerSlide = useBreakpointValue({ base: 1, md: 2, lg: 4 });
 
   const updateItemsPerSlide = () => {
     if (window.innerWidth <= 768) {
@@ -118,12 +65,7 @@ export default function OurProducts({ title, subTitles }) {
               </Text>
             </Flex>
             <Flex gap="4">
-              {/* <Box className="cursor-pointer" onClick={handlePrev}>
-                <LeftArrow />
-              </Box>
-              <Box className="cursor-pointer" onClick={handleNext}>
-                <RightArrow />
-              </Box> */}
+
               <Box
                 className={`cursor-pointer ${currentIndex === 0 && "opacity-50 pointer-events-none"
                   }`}

@@ -57,7 +57,7 @@ export default function Header() {
       <Box className='sticky top-0 z-50 text-textBlack text-base font-medium'>
         <header className="w-full bg-white shadow-md">
           <Container>
-            <Flex align="center" justify="between" className='py-7'>
+            <Flex align="center" justify="between" className='py-4 py-md-7'>
               <Box className="text-2xl font-bold">
                 <NavLink to="/" activeClassName="text-gray-500" onClick={scrollToTop}>
                   <img src={logo} alt="Logo" />
@@ -92,7 +92,7 @@ export default function Header() {
                         </DropdownMenu.Root>
                       ) : (
                         <NavLink onClick={scrollToTop} to={link.path}
-                          className={({ isActive }) => `block w-full ${link.path === '/product' && (currentPath === '/product' || currentPath === '/product-detail') || isActive ? 'text-primary' : 'hover:text-primary'}`} >
+                          className={({ isActive }) => `block w-full text-nowrap ${link.path === '/product' && (currentPath === '/product' || currentPath === '/product-detail') || isActive ? 'text-primary' : 'hover:text-primary'}`} >
                           {link.name}
                         </NavLink>
                       )}

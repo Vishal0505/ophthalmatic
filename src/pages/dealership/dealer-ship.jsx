@@ -4,15 +4,8 @@ import Container from "../../components/ui/container";
 import HaveQuestion from "../home/have-question";
 import OurProducts from "../home/our-products";
 import { applications, benefits, partners } from "./constant";
-import { useEffect } from "react";
 
 export default function DealerShip() {
-    useEffect(() => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth", // Optional: Adds smooth scrolling effect
-  });
-}, []);
     return (
         <Flex direction='column' gap='8'>
             <Breadcrumb title="Dealership" secondaryTitle="" path="dealership" label="Dealership" />

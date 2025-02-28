@@ -21,8 +21,8 @@ export default function HaveQuestion() {
       <Flex className="" justify="center">
         <Container className="w-full">
           <Flex className="justify-center gap-10 flex-col lg:flex-row ">
-            <Flex className="justify-end text-start flex-col sm:flex-row ">
-              <Flex className="justify-end flex-col py-6 pe-4">
+            <Flex className="justify-start text-start flex-col sm:flex-row ">
+              <Flex className="justify-start flex-col py-6 pe-4">
                 <Text size="2" className="text-primary text-start">
                   Have Question ?
                 </Text>

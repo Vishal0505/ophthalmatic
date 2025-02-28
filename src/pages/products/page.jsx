@@ -1,4 +1,4 @@
-import { Button, Flex, Text } from "@radix-ui/themes";
+import { Button, Flex, ScrollArea, Text } from "@radix-ui/themes";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Breadcrumb from "../../components/ui/breadcrumb";
@@ -26,28 +26,31 @@ export default function ProductPage() {
       />
       <Container className="w-full">
         <Flex direction="column" gap="8">
-          <Flex justify="center" gap="5">
-            {Categories?.map((category, index) => (
-              <Button
-                key={index}
-                size="3"
-                color={selectedCategory === category ? "" : "gray"}
-                variant={selectedCategory === category ? "solid" : "outline"}
-                radius="medium"
-                className={`${selectedCategory === category ? "!bg-primary" : "!bg-white"
-                  // className={`${selectedCategory === category ? "!bg-primary" : "!bg-white !border !border-red-300"
-                  }`}
-                onClick={() => setSelectedCategory(category)}
-              >
-                <Text
-                  className={`${selectedCategory === category ? "text-white" : "text-black"
+
+          <ScrollArea>
+            <Flex className="justify-start xl:justify-center gap-5">
+              {Categories?.map((category, index) => (
+                <Button
+                  key={index}
+                  size="3"
+                  color={selectedCategory === category ? "" : "gray"}
+                  variant={selectedCategory === category ? "solid" : "outline"}
+                  radius="medium"
+                  className={`${selectedCategory === category ? "!bg-primary" : "!bg-white"
+                    // className={`${selectedCategory === category ? "!bg-primary" : "!bg-white !border !border-red-300"
                     }`}
+                  onClick={() => setSelectedCategory(category)}
                 >
-                  {category}
-                </Text>
-              </Button>
-            ))}
-          </Flex>
+                  <Text
+                    className={`${selectedCategory === category ? "text-white" : "text-black"
+                      }`}
+                  >
+                    {category}
+                  </Text>
+                </Button>
+              ))}
+            </Flex>
+          </ScrollArea>
 
           {/* Conditionally render products or a message */}
           <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 py-6 bg-productbackground rounded-lg flex-1">
