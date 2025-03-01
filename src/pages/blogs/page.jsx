@@ -1,4 +1,4 @@
-import { Card, Flex, Inset, Text } from "@radix-ui/themes";
+import { Box, Card, Flex, Inset, Text } from "@radix-ui/themes";
 import { ArrowUpRight } from "lucide-react";
 import Breadcrumb from "../../components/ui/breadcrumb";
 import Container from "../../components/ui/container";
@@ -47,7 +47,9 @@ export default function Blogs() {
             ))}
           </Flex>
         </Container>
-        <HaveQuestion />
+        <Box className="bg-skyblue" py='8'>
+          <HaveQuestion />
+        </Box>
       </Flex>
     </Flex>
   )
