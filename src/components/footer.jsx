@@ -48,8 +48,10 @@ export default function Footer() {
                         Contact Us
                       </NavLink>
                       <NavLink to="/dealership" onClick={scrollToTop} className="text-white hover:text-primary">
-
                         Become our dealer
+                      </NavLink>
+                      <NavLink to="/blogs" onClick={scrollToTop} className="text-white hover:text-primary">
+                        Blogs & Articles
                       </NavLink>
                     </Flex>
                   </Flex>

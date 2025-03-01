@@ -15,6 +15,8 @@ import OurWareHouse from './pages/our-warehouse/page';
 import ProductPage from './pages/products/page';
 import SpecificProductPage from './pages/products/product-detail';
 import DealerShip from './pages/dealership/dealer-ship';
+import Blogs from './pages/blogs/page';
+import BlogDetailsCard from './pages/blogs/blog-details-card';
 
 export const routeConfig = [
   {
@@ -77,6 +79,14 @@ export const routeConfig = [
       {
         path: 'dealership',
         element: <DealerShip />,
+      },
+      {
+        path: 'blogs',
+        element: <Blogs />,
+      },
+      {
+        path: 'blogs/:id',
+        element: <BlogDetailsCard />,
       },
     ],
     errorElement: <ErrorPage />,

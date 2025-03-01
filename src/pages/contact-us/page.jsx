@@ -6,15 +6,8 @@ import ContactMail from "../../components/icons/contact-mail";
 import Breadcrumb from "../../components/ui/breadcrumb";
 import Container from "../../components/ui/container";
 import HaveQuestion from "../home/have-question";
-import { useEffect } from "react";
 
 export default function ContactPage() {
-useEffect(() => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth", // Optional: Adds smooth scrolling effect
-  });
-}, []);
   return (
     <Flex direction="column" gap="8">
       <Breadcrumb
@@ -86,7 +79,7 @@ useEffect(() => {
         </Container>
         <HaveQuestion />
       </Flex>
-      <Flex>
+      <Flex className="bg-[#EFF8FF] w-full" justify='center'>
         <img src={map} alt="Logo" className="" />
       </Flex>
     </Flex>
